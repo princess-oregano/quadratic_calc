@@ -37,7 +37,7 @@ if a != 0
                 if c == 0(a*x^2 + b*x + 0 = 0)
                         x = 0 and x = -b/a
                 if c != 0(0*x^2 + b*x + c = 0)
-                        find discriminant 
+                        find discriminant^2 
                         if d^2<0 then no real solutions
                         else find two solutions
         }
@@ -47,8 +47,15 @@ print:  equation in a*x^2 + b*x + c = 0 form;
         number of solutions; 
         solutions.
 
+extra tasks:
 
-
+1)fix output format
+2)design a function to scan coefficients. it should include:
+        restrict non-numeric input
+        restrict input of number less that accuracy of double value
+3)loop, so the user could enter the right value
+4)add complex numbers support
+5)put solutions in an increasing order
 
 
 
