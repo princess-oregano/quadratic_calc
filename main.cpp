@@ -10,9 +10,9 @@ int main()
         scanf("%lf", &equation.b_coef);
         scanf("%lf", &equation.c_coef);
 
-        solve(equation);
+        solve(&equation);
 
-        print_solution(equation);
+        print_solution(&equation);
 
         return 0;
 }
