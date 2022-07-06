@@ -4,7 +4,7 @@ struct quadra {
         double a_coef = 0;
         double b_coef = 0;
         double c_coef = 0;
-        double solution1 = 1;
+        double solution1 = 0;
         double solution2 = 0;
         double discriminant_squared = 0;
 };
