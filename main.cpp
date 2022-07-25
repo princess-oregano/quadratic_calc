@@ -4,7 +4,7 @@
 
 int main()
 {
-        struct quadra equation;
+        quadra equation;
 
         scanf("%lf", &equation.a_coef);
         scanf("%lf", &equation.b_coef);

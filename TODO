@@ -1,7 +1,7 @@
 for accuracy using "double" values
 
-ask user for coefficients a, b and c(is done parallel to -->)
-                                                         
+ask user for coefficients a, b and c
+
 for better accuracy calculate by this scheme:
 if a == 0  
 {
@@ -49,13 +49,14 @@ print:  equation in a*x^2 + b*x + c = 0 form;
 
 extra tasks:
 
-1)fix output format
+DONE 1)fix output format
 2)design a function to scan coefficients. it should include:
         restrict non-numeric input
         restrict input of number less that accuracy of double value
-3)loop, so the user could enter the right value
-4)add complex numbers support
-5)put solutions in an increasing order
+        loop, so the user could enter the right value
+3)add complex numbers support
+DONE 4)put solutions in an increasing order
+5)create menu, description, manual
 
 
 

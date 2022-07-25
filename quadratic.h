@@ -19,7 +19,8 @@ struct quadra
 };
 
 int  are_equal(double value1, double value2);
-void scanner       (struct quadra* equation);
-void solve         (struct quadra* equation);
-void print_solution(struct quadra* equation);
+void scanner       (quadra* equation);
+void solve         (quadra* equation);
+void print_solution(quadra* equation);
+void sort(double* value1, double* value2);
 
