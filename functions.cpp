@@ -24,7 +24,7 @@ void menu()
         printf("\n"
                "s) solve equation           h) help\n"
                "\n"
-               "c) cats                     q) quit\n");
+               "q) quit\n");
         printf("************************************************\n");
 }
 
@@ -33,7 +33,6 @@ void get_help()
        printf("\nCommands:\n"
               "'s': asks for coefficients to solve equation\n"
               "'h': open manual\n"
-              "'c': cats\n" 
               "'q': quits the program\n");
        printf("\nCoefficients entry:\n"
               "For equation like a*x^2 + b*x + c = 0, enter a b c.\n"
@@ -89,7 +88,7 @@ void process_choice(quadra* equation)
                                 "   ///_.-' _..--.'_    \\                    `( ) ) // //\n"
                                 "   / (_..-' // (< _     ;_..__               ; `' / ///  \n"
                                 "    / // // //  `-._,_)' // / ``--...____..-' /// / //   \n");
-                                printf("Bye!\n");
+                                printf("                    Bye!\n");
 
                                 exit(EXIT_SUCCESS);
                                 break;
