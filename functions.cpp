@@ -40,10 +40,10 @@ void get_help()
               "Example: for 5*x^2 + 10*x = 0 enter 5 10 0.\n");
 }
 
-void scan_choice(quadra* equation)
+void process_choice(quadra* equation)
 {
         char choice[41] = {};
-        char ch = '0';
+        int ch = 0;
         int i = 0;
 
         while (!isspace(ch = getchar()) && (i < 40))
@@ -125,6 +125,8 @@ void scan_choice(quadra* equation)
         }
         else 
                 printf("Wrong input!\n");
+
+        choice[0] = '\0';
 
 }
 

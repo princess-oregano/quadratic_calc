@@ -18,12 +18,12 @@ struct quadra
         double solution2                = 0;
 };
 
-int  are_equal(double value1, double value2);
-bool scanner       (quadra* equation);
-void solve         (quadra* equation);
-void print_solution(quadra* equation);
-void sort          (quadra* equation);
-void scan_choice   (quadra* equation);
-void menu();
-void get_help();
+int  are_equal(double value1, double value2);    //returns 1 if two values are equal
+bool scanner       (quadra* equation);           //returns 1 if scans coefficients successfully, else 0
+void solve         (quadra* equation);           //solves equation with given coefficients
+void print_solution(quadra* equation);           //prints solutions
+void sort          (quadra* equation);           //sorts solutions in increasing order
+void process_choice(quadra* equation);           //scans and processes input 
+void menu();                                     //prints menu
+void get_help();                                 //prints short manual
 

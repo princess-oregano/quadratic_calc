@@ -5,11 +5,11 @@
 int main()
 {
         quadra equation;
-
+        
         while(1)
         {
                 menu();
-                scan_choice(&equation); 
+                process_choice(&equation); 
         }
 
         return 0;
