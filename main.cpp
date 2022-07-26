@@ -6,13 +6,11 @@ int main()
 {
         quadra equation;
 
-        scanf("%lf", &equation.a_coef);
-        scanf("%lf", &equation.b_coef);
-        scanf("%lf", &equation.c_coef);
-
-        solve(&equation);
-
-        print_solution(&equation);
+        while(1)
+        {
+                menu();
+                scan_choice(&equation); 
+        }
 
         return 0;
 }
