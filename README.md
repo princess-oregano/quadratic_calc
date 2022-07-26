@@ -21,10 +21,10 @@ After you start the program, you will see a menu with 3 options:
 
 To choose an option, print a letter corresponding to it, and hit `<Enter>`.
 
-To enter coefficients, print them in `a b c` format, e.g. for solving equation like 2*x^2 - 9 = 0, print `2 0 9` and hit `<Enter>`.
+To enter coefficients, print them in `a b c` format, e.g. for solving equation like 2*x^2 - 9 = 0, print `2 0 -9` and hit `<Enter>`.
 
 ## Additional info
 * Menu input processor is not sensible to register, so you can enter both lowercase and uppercase letters.
 * But you can enter ***only*** letters, entering words will cause an error.
-* This calculator ***does not*** support complex numbers.
+* This calculator ***does not*** support complex numbers. If solutions are complex numbers, then the program prints `No solutions.`
 
