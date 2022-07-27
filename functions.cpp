@@ -6,7 +6,7 @@
 
 int are_equal(double value1, double value2) 
 {
-        if (fabs(value1 - value2) < EPSILON)
+        if (fabs(value1 - value2) < THRESHOLD)
                 return 1;
         else 
                 return 0;
@@ -28,7 +28,7 @@ void menu()
         printf("************************************************\n");
 }
 
-void get_help()
+void print_help()
 {
        printf("\nCommands:\n"
               "'s': asks for coefficients to solve equation\n"
@@ -41,18 +41,18 @@ void get_help()
 
 void process_choice(quadra* equation)
 {
-        char choice[41] = {};
+        char choice[ARRAY_SIZE] = {};
         int ch = 0;
-        int i = 0;
+        int letter = 0;
 
-        while (!isspace(ch = getchar()) && (i < 40))
+        while (!isspace(ch = getchar()) && (letter < ARRAY_SIZE))
         {
-                choice[i] = ch;
-                i++;
+                choice[letter] = ch;
+                letter++;
         }
-        choice[i] = '\0';
+        choice[letter] = '\0';
         
-        if (i == 1)
+        if (letter == 1)
         {
                 switch (tolower(choice[0]))
                 {
@@ -61,7 +61,7 @@ void process_choice(quadra* equation)
                                 if (scanner(equation))
                                 {
                                         while (getchar() != '\n')
-                                                continue;
+                                                ;
                                         
                                         solve(equation);
                                         print_solution(equation);
@@ -71,7 +71,7 @@ void process_choice(quadra* equation)
                                 else 
                                 {
                                         while (getchar() != '\n')
-                                                continue;
+                                                ;
                                         
                                         printf("Wrong input!\n");
                                         printf("Press 'h' if you need help\n");
@@ -79,51 +79,26 @@ void process_choice(quadra* equation)
                                         break;
                                 }
                         case 'h': 
-                                get_help();
+                                print_help();
                                 break;
                         case 'q':
-                                printf(
-                                "              __..--''``---....___   _..._    __         \n"
-                                "    /// //_.-'    .-/\";  `        ``<._  ``.''_ `. / // /\n"
-                                "   ///_.-' _..--.'_    \\                    `( ) ) // //\n"
-                                "   / (_..-' // (< _     ;_..__               ; `' / ///  \n"
-                                "    / // // //  `-._,_)' // / ``--...____..-' /// / //   \n");
-                                printf("                    Bye!\n");
+                                print_bye();
 
                                 exit(EXIT_SUCCESS);
                                 break;
-                        case 'c': 
-                                printf(
-                                        "             *     ,MMM8&&&.            *              \n"
-                                        "                  MMMM88&&&&&    .                     \n"
-                                        "                 MMMM88&&&&&&&                         \n"
-                                        "     *           MMM88&&&&&&&&                         \n"
-                                        "                 MMM88&&&&&&&&                         \n"
-                                        "                 'MMM88&&&&&&'                         \n"
-                                        "                   'MMM8&&&'      *                    \n"
-                                        "          |\\___/|     /\\___/\\                       \n"
-                                        "          )     (     )    ~( .                        \n"
-                                        "         =\\     /=   =\\~    /=                       \n" 
-                                        "           )===(       ) ~ (                           \n"  
-                                        "          /     \\     /     \\                        \n"
-                                        "          |     |     ) ~   (                          \n" 
-                                        "         /       \\   /     ~ \\                       \n" 
-                                        "         \\       /   \\~     ~/                       \n"
-                                        "  _/\\_/\\_/\\__  _/_/\\_/\\__~__/_/\\_/\\_/\\_/\\_/\\_\n"
-                                        "  |  |  |  |( (  |  |  | ))  |  |  |  |  |  |          \n"
-                                        "  |  |  |  | ) ) |  |  |//|  |  |  |  |  |  |          \n"
-                                        "  |  |  |  |(_(  |  |  (( |  |  |  |  |  |  |          \n"
-                                        "  |  |  |  |  |  |  |  |\\)|  |  |  |  |  |  |         \n"
-                                        "  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |          \n");
+                        case 'c':
+                                easter_egg();
                                 break;
                         default:
                                 printf("Wrong input!\n");
-                                printf("Press 'h' if you need help\n");
+                                printf("Press 'h' if you need help.\n");
                                 break;
                 }
         }
-        else 
+        else
+        {
                 printf("Wrong input!\n");
+        }
 
         choice[0] = '\0';
 
@@ -233,21 +208,63 @@ void print_solution(quadra* equation)
         printf("The equation entered:\n"
                "%.2lf*x^2 %c %.2lf*x %c %.2lf = 0.\n",
                equation->a_coef, (equation->b_coef > 0) ? '+' : '-',
-               equation->b_coef, (equation->c_coef > 0) ? '+' : '-',
-               equation->c_coef);
+               fabs(equation->b_coef), (equation->c_coef > 0) ? '+' : '-',
+               fabs(equation->c_coef));
 
         printf("Solutions:\n");
 
         if (equation->sol_num == NO_SOL)
+        {
                 printf("No solutions.\n");
+        }
         else if (equation->sol_num == ONE_SOL)
+        {
                 printf("One solution: %lf.\n", equation->solution1);
+        }
         else if (equation->sol_num == TWO_SOL)
         {
                 sort(equation);
                 printf("Two solutions: %lf; %lf.\n", equation->solution1, equation->solution2);
         }
-        else 
+        else
+        {
                 printf("Infinite number of solutions.\n");
+        }
 }
 
+void print_bye()
+{
+        printf(
+        "              __..--''``---....___   _..._    __         \n"
+        "    /// //_.-'    .-/\";  `        ``<._  ``.''_ `. / // /\n"
+        "   ///_.-' _..--.'_    \\                    `( ) ) // //\n"
+        "   / (_..-' // (< _     ;_..__               ; `' / ///  \n"
+        "    / // // //  `-._,_)' // / ``--...____..-' /// / //   \n");
+        printf("                    Bye!\n");
+}
+
+void easter_egg()
+{
+        printf(
+                "             *     ,MMM8&&&.            *              \n"
+                "                  MMMM88&&&&&    .                     \n"
+                "                 MMMM88&&&&&&&                         \n"
+                "     *           MMM88&&&&&&&&                         \n"
+                "                 MMM88&&&&&&&&                         \n"
+                "                 'MMM88&&&&&&'                         \n"
+                "                   'MMM8&&&'      *                    \n"
+                "          |\\___/|     /\\___/\\                       \n"
+                "          )     (     )    ~( .                        \n"
+                "         =\\     /=   =\\~    /=                       \n" 
+                "           )===(       ) ~ (                           \n"  
+                "          /     \\     /     \\                        \n"
+                "          |     |     ) ~   (                          \n" 
+                "         /       \\   /     ~ \\                       \n" 
+                "         \\       /   \\~     ~/                       \n"
+                "  _/\\_/\\_/\\__  _/_/\\_/\\__~__/_/\\_/\\_/\\_/\\_/\\_\n"
+                "  |  |  |  |( (  |  |  | ))  |  |  |  |  |  |          \n"
+                "  |  |  |  | ) ) |  |  |//|  |  |  |  |  |  |          \n"
+                "  |  |  |  |(_(  |  |  (( |  |  |  |  |  |  |          \n"
+                "  |  |  |  |  |  |  |  |\\)|  |  |  |  |  |  |         \n"
+                "  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |          \n");
+}

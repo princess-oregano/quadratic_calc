@@ -1,4 +1,5 @@
-const double EPSILON = 0.000001;
+const double THRESHOLD = 0.000001;
+const int ARRAY_SIZE = 40;
 
 enum num_of_solutions 
 {
@@ -13,17 +14,28 @@ struct quadra
         double a_coef                   = 0;
         double b_coef                   = 0;
         double c_coef                   = 0;
-        enum   num_of_solutions sol_num = NO_SOL;
+        num_of_solutions sol_num   = NO_SOL;
         double solution1                = 0;
         double solution2                = 0;
 };
-
-int  are_equal(double value1, double value2);    //returns 1 if two values are equal
-bool scanner       (quadra* equation);           //returns 1 if scans coefficients successfully, else 0
-void solve         (quadra* equation);           //solves equation with given coefficients
-void print_solution(quadra* equation);           //prints solutions
-void sort          (quadra* equation);           //sorts solutions in increasing order
-void process_choice(quadra* equation);           //scans and processes input 
-void menu();                                     //prints menu
-void get_help();                                 //prints short manual
+//returns 1 if two values are equal
+int  are_equal(double value1, double value2);    
+ //returns 1 if scans coefficients successfully, else 0
+bool scanner       (quadra* equation);         
+//solves equation with given coefficients
+void solve         (quadra* equation);           
+//prints solutions
+void print_solution(quadra* equation);           
+//sorts solutions in increasing order
+void sort          (quadra* equation);           
+//scans and processes input
+void process_choice(quadra* equation);            
+//prints menu
+void menu();                                     
+//prints short manual
+void print_help();                                 
+//prints a cat and 'bye' message
+void print_bye();
+//prints a cat
+void easter_egg();
 
