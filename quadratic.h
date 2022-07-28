@@ -1,14 +1,14 @@
 const double THRESHOLD = 0.000001;
-const int ARRAY_SIZE = 40;
+const int CHOICE_LEN = 40;
 
 enum option
 {
-        SOLVE       = 0,
-        HELP        = 1,
-        CATS        = 2,
-        QUIT        = 3,
-        WRONG_INPUT = 4,
-        WORD        = 5,
+        OPT_SOLVE      = 0,
+        OPT_HELP       = 1,
+        OPT_EASTER_EGG = 2,
+        OPT_QUIT       = 3,
+        OPT_ERROR_CHAR = 4,
+        OPT_ERROR_WORD = 5,
 };
 
 enum num_of_solutions 
@@ -21,27 +21,24 @@ enum num_of_solutions
 
 struct quadra 
 {
-        double a_coef                   = 0;
-        double b_coef                   = 0;
-        double c_coef                   = 0;
-        num_of_solutions sol_num   = NO_SOL;
-        double solution1                = 0;
-        double solution2                = 0;
+        double a_coef                 = 0;
+        double b_coef                 = 0;
+        double c_coef                 = 0;
+        num_of_solutions sol_num = NO_SOL;
+        double solution1              = 0;
+        double solution2              = 0;
 };
-//returns 1 if two values are equal
-int  are_equal(double value1, double value2);    
- //returns 1 if scans coefficients successfully, else 0
-bool scanner         (quadra* equation);         
+
+//returns 0 if scans coefficients successfully, else 1
+bool scan_coefs      (quadra* equation);         
 //solves equation with given coefficients
-void solve           (quadra* equation);           
+void solve_equation  (quadra* equation);           
 //prints solutions
 void print_solution  (quadra* equation);           
-//sorts solutions in increasing order
-void sort            (quadra* equation);           
 //scans and processes input
 option process_choice();            
 //prints menu
-void menu();                                     
+void print_menu();                                     
 //prints short manual
 void print_help();                                 
 //prints a cat and 'bye' message

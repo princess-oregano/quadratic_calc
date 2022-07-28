@@ -4,23 +4,35 @@
 #include <string.h>
 #include "quadratic.h"
 
-int are_equal(double value1, double value2) 
+//returns 1 if two values are equal
+static bool are_equal(double value1, double value2) 
 {
-        if (fabs(value1 - value2) < THRESHOLD)
-                return 1;
-        else 
-                return 0;
+        return (fabs(value1 - value2) < THRESHOLD);
 }
 
-void menu()
+void print_menu()
 {
-        printf("************************************************\n");
-        printf("███╗   ███╗███████╗███╗   ██╗██╗   ██╗\n"
-               "████╗ ████║██╔════╝████╗  ██║██║   ██║\n"
-               "██╔████╔██║█████╗  ██╔██╗ ██║██║   ██║\n"
-               "██║╚██╔╝██║██╔══╝  ██║╚██╗██║██║   ██║\n"
-               "██║ ╚═╝ ██║███████╗██║ ╚████║╚██████╔╝\n"
-               "╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝ ╚═════╝ \n");
+        printf("************************************************\n");                                     
+        printf("                         ,       \n"  
+               "  ,-.       _,---._ __  / \\     \n"
+               " /  )    .-'       `./ /   \\    \n"
+               "(  (   ,'            `/    /|    \n"
+               " \\  `-\"             \\'\\   / |\n"
+               "  `.              ,  \\ \\ /  |  \n"
+               "   /`.          ,'-`----Y   |    \n"
+               "  (            ;        |   '    \n"
+               "  |  ,-.    ,-'         |  /     \n"
+               "  |  | (   |            | /      \n"
+               "  )  |  \\  `.___________|/      \n"
+               "  `--'   `--'                    \n");
+        /*
+         *printf("███╗   ███╗███████╗███╗   ██╗██╗   ██╗\n"
+         *       "████╗ ████║██╔════╝████╗  ██║██║   ██║\n"
+         *       "██╔████╔██║█████╗  ██╔██╗ ██║██║   ██║\n"
+         *       "██║╚██╔╝██║██╔══╝  ██║╚██╗██║██║   ██║\n"
+         *       "██║ ╚═╝ ██║███████╗██║ ╚████║╚██████╔╝\n"
+         *       "╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝ ╚═════╝ \n");
+         */
         printf("\n"
                "s) solve equation           h) help\n"
                "\n"
@@ -30,111 +42,58 @@ void menu()
 
 void print_help()
 {
-       printf("\nCommands:\n"
-              "'s': asks for coefficients to solve equation\n"
-              "'h': open manual\n"
-              "'q': quits the program\n");
-       printf("\nCoefficients entry:\n"
-              "For equation like a*x^2 + b*x + c = 0, enter a b c.\n"
-              "Example: for 5*x^2 + 10*x = 0 enter 5 10 0.\n\n");
+        printf("\nCommands:\n"
+               "'s': ask for coefficients to solve equation\n"
+               "'h': open manual\n"
+               "'q': quit the program\n");
+        printf("\nCoefficients entry:\n"
+               "For equation like a*x^2 + b*x + c = 0, enter a b c.\n"
+               "Example: for 5*x^2 + 10*x = 0 enter 5 10 0.\n\n");
 }
-
+                
 option process_choice()
 {
-        char choice[ARRAY_SIZE] = {};
+        char choice[CHOICE_LEN] = {};
         int  ch = 0;
-        int  letter = 0;
+        int  index = 0;
 
         printf("Please choose an option: ");
 
-        while (((ch = getchar()) != '\n') && (letter < ARRAY_SIZE))
+        while (((ch = getchar()) != '\n') && (index < CHOICE_LEN))
         {
-                choice[letter] = ch;
-                letter++;
+                choice[index] = (char) ch;
+                index++;
         }
-        choice[letter] = '\0';
         
-        if (strlen(choice) == 1)
-        {
-                switch (tolower(choice[0]))
+        if (index != 1)
+                return OPT_ERROR_WORD;
+        
+        switch (tolower(choice[0]))
                 {
                         case 's':
-                                return SOLVE;
-                                break;
-                                /*
-                                 *printf("Enter coefficient:\n");
-                                 *if (scanner(equation))
-                                 *{
-                                 *        while (getchar() != '\n')
-                                 *                ;
-                                 *        
-                                 *        solve(equation);
-                                 *        print_solution(equation);
-                                 *        
-                                 *        break;
-                                 *}
-                                 *else 
-                                 *{
-                                 *        while (getchar() != '\n')
-                                 *                ;
-                                 *        
-                                 *        printf("Wrong input!\n");
-                                 *        printf("Press 'h' if you need help\n");
-                                 *        
-                                 *        break;
-                                 *}
-                                 */
+                                return OPT_SOLVE;
                         case 'h':
-                                return HELP;
-                                break;
-                                /*
-                                 *print_help();
-                                 *break;
-                                 */
+                                return OPT_HELP;
                         case 'q':
-                                return QUIT;
-                                break;
-                                /*
-                                 *print_bye();
-                                 *exit(EXIT_SUCCESS);
-                                 *break;
-                                 */
+                                return OPT_QUIT;
                         case 'c':
-                                return CATS;
-                                break;
-                                /*
-                                 *easter_egg();
-                                 *break;
-                                 */
+                                return OPT_EASTER_EGG;
                         default:
-                                return WRONG_INPUT;
-                                break;
-                                /*
-                                 *printf("Wrong input!\n");
-                                 *printf("Press 'h' if you need help.\n");
-                                 *break;
-                                 */
+                                return OPT_ERROR_CHAR;
                 }
-        }
-        else
-        {
-                return WORD;
-        }
-
-        choice[0] = '\0';
-
 }
 
-bool scanner(quadra* equation)
+bool scan_coefs(quadra* equation)
 {
         printf("Please enter coefficients: ");
 
         if (scanf("%lf %lf %lf", &equation->a_coef, &equation->b_coef, &equation->c_coef) != 3)
+                return 1;
+        else 
                 return 0;
-        else return 1;
 }
 
-void solve(quadra* equation)
+void solve_equation(quadra* equation)
 {
         double discriminant_squared = 0;
 
@@ -214,7 +173,8 @@ void solve(quadra* equation)
         }
 }
 
-void sort(quadra* equation)
+//sorts solutions in increasing order
+static void sort_solutions(quadra* equation)
 {
         double temp = 0;
 
@@ -230,9 +190,9 @@ void print_solution(quadra* equation)
 {
         printf("\nThe equation entered:\n"
                "%.2lf*x^2 %c %.2lf*x %c %.2lf = 0.\n",
-               equation->a_coef, (equation->b_coef > 0) ? '+' : '-',
-               fabs(equation->b_coef), (equation->c_coef > 0) ? '+' : '-',
-               fabs(equation->c_coef));
+               equation->a_coef,       
+               (equation->b_coef > 0) ? '+' : '-', fabs(equation->b_coef), 
+               (equation->c_coef > 0) ? '+' : '-', fabs(equation->c_coef));
 
         printf("Solutions:\n");
 
@@ -246,7 +206,7 @@ void print_solution(quadra* equation)
         }
         else if (equation->sol_num == TWO_SOL)
         {
-                sort(equation);
+                sort_solutions(equation);
                 printf("Two solutions: %lf; %lf.\n", equation->solution1, equation->solution2);
         }
         else
@@ -295,21 +255,21 @@ void easter_egg()
 
 void trim()
 {
-         while (getchar() != '\n')
-                 ;
+        while (getchar() != '\n')
+                ;
 }
 
 void print_error(option mode)
 {
-         fprintf(stderr, "\x1b[31mWrong input!\n\x1b[0m");
+        fprintf(stderr, "\x1b[31mWrong input!\n\x1b[0m");
 
-         if (mode == WRONG_INPUT)
-                 fprintf(stderr, "\x1b[31mOnly options 's', 'h' and 'q' are allowed.\n\x1b[0m");
-         else if (mode == WORD)
-                 fprintf(stderr, "\x1b[31mOnly letters are allowed.\n\x1b[0m");
-         else 
-                 fprintf(stderr, "\x1b[31mCould not scan coefficients.\n\x1b[0m");
+        if (mode == OPT_ERROR_CHAR)
+                fprintf(stderr, "\x1b[31mOnly options 's', 'h' and 'q' are allowed.\n\x1b[0m");
+        else if (mode == OPT_ERROR_WORD)
+                fprintf(stderr, "\x1b[31mOnly letters are allowed.\n\x1b[0m");
+        else 
+                fprintf(stderr, "\x1b[31mCould not scan coefficients.\n\x1b[0m");
 
-         printf("\x1b[31mPress 'h' for more details.\n\x1b[0m");
+        printf("\x1b[31mPress 'h' for more details.\n\x1b[0m");
 }
 
