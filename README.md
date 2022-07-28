@@ -11,7 +11,18 @@ As the name suggests, this program solves different types of quadratic equations
 
 ## Installation and setup
 1. Download all source files into one folder.
-2. Compile with GCC.
+```
+$ git clone https://github.com/tyvia/quadratic_calc
+```
+2. Open the subfolder with source files and compile with GCC.
+```
+$ cd quadratic_calc/
+$ gcc main.cpp functions.cpp -o quadratic -lm 
+```
+3. Run the program.
+```
+$ ./quadratic
+```
 
 ## Usage
 After you start the program, you will see a menu with 3 options:
