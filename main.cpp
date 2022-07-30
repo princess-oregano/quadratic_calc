@@ -22,7 +22,6 @@ int main()
                                 {
                                         print_error(opt);
                                 }
-                                trim();
                                 break;
                         case OPT_HELP:
                                 print_help();
@@ -38,6 +37,8 @@ int main()
                         default:
                                 break;
                 }
+
+                trim();
         }
 
         print_bye();

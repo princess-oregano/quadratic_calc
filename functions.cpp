@@ -46,18 +46,13 @@ void print_help()
 option process_choice()
 {
         char choice[CHOICE_LEN] = {};
-        int  ch = 0;
-        int  index = 0;
+        int  symbols_num = 0;
 
         printf("Please choose an option: ");
 
-        while (((ch = getchar()) != '\n') && (index < CHOICE_LEN))
-        {
-                choice[index] = (char) ch;
-                index++;
-        }
+        scanf("%s%n", choice, &symbols_num);
         
-        if (index != 1)
+        if (symbols_num > 1)
                 return OPT_ERROR_WORD;
         
         switch (tolower(choice[0]))
