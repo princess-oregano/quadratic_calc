@@ -1,13 +1,11 @@
 # quadratic_calс
 
+As the name suggests, this program is a calculator for quadratic equations.
+
 ## Table of contents
-* [General info](#general-info)
 * [Installation and setup](#installation-and-setup)
 * [Usage](@usage)
 * [Additional info](#additional-info)
-
-## General info 
-As the name suggests, this program solves different types of quadratic equations.
 
 ## Installation and setup
 1. Download all source files into one folder.
