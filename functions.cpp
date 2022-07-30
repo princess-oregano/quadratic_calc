@@ -4,8 +4,7 @@
 #include <string.h>
 #include "quadratic.h"
 
-//returns 1 if two values are equal
-static bool are_equal(double value1, double value2) 
+bool are_equal(double value1, double value2) 
 {
         return (fabs(value1 - value2) < THRESHOLD);
 }
@@ -177,7 +176,7 @@ void print_solution(quadra* equation)
 {
         printf("\nThe equation entered:\n"
                "%.2lf*x^2 %c %.2lf*x %c %.2lf = 0.\n",
-               equation->a_coef,       
+                equation->a_coef,       
                (equation->b_coef > 0) ? '+' : '-', fabs(equation->b_coef), 
                (equation->c_coef > 0) ? '+' : '-', fabs(equation->c_coef));
 

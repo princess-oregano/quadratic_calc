@@ -29,6 +29,8 @@ struct quadra
         double solution2              = 0;
 };
 
+//returns 1 if two values are equal
+bool are_equal(double value1, double value2); 
 //returns 0 if scans coefficients successfully, else 1
 bool scan_coefs      (quadra* equation);         
 //solves equation with given coefficients
