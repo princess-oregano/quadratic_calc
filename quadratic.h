@@ -35,6 +35,8 @@ bool are_equal(double value1, double value2);
 bool scan_coefs      (quadra* equation);         
 //solves equation with given coefficients
 void solve_equation  (quadra* equation);           
+//sorts solutions in increasing order
+void sort_solutions(quadra* equation);
 //prints solutions
 void print_solution  (quadra* equation);           
 //scans and processes input

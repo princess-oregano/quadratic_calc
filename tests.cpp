@@ -4,28 +4,35 @@
 
 int main()
 {
-        quadra equation; 
-        answer ans;
 
-        make_test(0, 0, 0, 0, 0, INF_SOL, &equation, &ans);
-
+        make_test(0, 0, 0, 0, 0, INF_SOL);
+        make_test(0, 0, 2.5, 0, 0, NO_SOL);
+        make_test(0, -3.65, 0, 0, 0, ONE_SOL);
+        make_test(0, 5, -10, 0, 2, ONE_SOL);
+        make_test(2, 0, -9, -2.1213203, 2.1213203, TWO_SOL);
+        make_test(5.63, 2.96, 1.3, 0, 0, NO_SOL);
+        make_test(1, 2, 1, -1, 0, ONE_SOL);
+        
         return 0;
 }
 
 void make_test(double coef_a, double coef_b, double coef_c, 
-               double sol1, double sol2, num_of_solutions number_sols,
-               quadra* equation, answer* ans)
+               double sol1, double sol2, num_of_solutions number_sols)
 {
-        equation->a_coef = coef_a;
-        equation->b_coef = coef_b; 
-        equation->c_coef = coef_c;
+        quadra equation; 
+        answer ans;
 
-        ans->solution1 = sol1;
-        ans->solution2 = sol2;
-        ans->sol_num = number_sols;
+        equation.a_coef = coef_a;
+        equation.b_coef = coef_b; 
+        equation.c_coef = coef_c;
 
-        solve_equation(equation);
-        test_msg(equation, ans, check(equation, ans));
+        ans.solution1 = sol1;
+        ans.solution2 = sol2;
+        ans.sol_num = number_sols;
+
+        solve_equation(&equation);
+        sort_solutions(&equation);
+        test_msg(&equation, &ans, check(&equation, &ans));
 }
 
 bool check(quadra* equation, answer* ans)
@@ -44,7 +51,7 @@ void test_msg(quadra* equation, answer* ans, bool status)
                 return;
         }
 
-        printf("FAILURE");
+        printf("\nFAILURE\n");
 
         printf("Expected:\n");
         printf("x1 = %lf, x2 = %lf, number of solutions: ", ans->solution1, ans->solution2);
@@ -67,5 +74,7 @@ void test_msg(quadra* equation, answer* ans, bool status)
                 printf("2.\n");
         else 
                 printf("Infinite.\n");
+
+        printf("\n");
 }
 

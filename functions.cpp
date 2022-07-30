@@ -150,17 +150,21 @@ void solve_equation(quadra* equation)
                                         equation->solution1 = (- equation->b_coef - sqrt(discriminant_squared)) / (2*equation->a_coef);
                                         equation->solution2 = (- equation->b_coef + sqrt(discriminant_squared)) / (2*equation->a_coef);
                                         if (are_equal(equation->solution1, equation->solution2))
+                                        {
                                                 equation->sol_num = ONE_SOL;
-                                        else 
+                                                equation->solution2 = 0;
+                                        }
+                                        else
+                                        {
                                                 equation->sol_num = TWO_SOL;
+                                        }
                                 }
                         }
                 }
         }
 }
 
-//sorts solutions in increasing order
-static void sort_solutions(quadra* equation)
+void sort_solutions(quadra* equation)
 {
         double temp = 0;
 
