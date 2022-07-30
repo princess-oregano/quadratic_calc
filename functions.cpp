@@ -25,18 +25,10 @@ void print_menu()
                "  |  | (   |            | /      \n"
                "  )  |  \\  `.___________|/      \n"
                "  `--'   `--'                    \n");
-        /*
-         *printf("███╗   ███╗███████╗███╗   ██╗██╗   ██╗\n"
-         *       "████╗ ████║██╔════╝████╗  ██║██║   ██║\n"
-         *       "██╔████╔██║█████╗  ██╔██╗ ██║██║   ██║\n"
-         *       "██║╚██╔╝██║██╔══╝  ██║╚██╗██║██║   ██║\n"
-         *       "██║ ╚═╝ ██║███████╗██║ ╚████║╚██████╔╝\n"
-         *       "╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝ ╚═════╝ \n");
-         */
         printf("\n"
-               "s) solve equation           h) help\n"
-               "\n"
-               "q) quit\n");
+               "s - solve equation\n"          
+               "h - help\n"
+               "q - quit\n");
         printf("************************************************\n");
 }
 
@@ -227,7 +219,7 @@ void print_bye()
         printf("                    Bye!\n");
 }
 
-void easter_egg()
+void print_easter_egg()
 {
         printf(
                 "             *     ,MMM8&&&.            *              \n"
@@ -259,13 +251,13 @@ void trim()
                 ;
 }
 
-void print_error(option mode)
+void print_error(option opt)
 {
         fprintf(stderr, "\x1b[31mWrong input!\n\x1b[0m");
 
-        if (mode == OPT_ERROR_CHAR)
+        if (opt == OPT_ERROR_CHAR)
                 fprintf(stderr, "\x1b[31mOnly options 's', 'h' and 'q' are allowed.\n\x1b[0m");
-        else if (mode == OPT_ERROR_WORD)
+        else if (opt == OPT_ERROR_WORD)
                 fprintf(stderr, "\x1b[31mOnly letters are allowed.\n\x1b[0m");
         else 
                 fprintf(stderr, "\x1b[31mCould not scan coefficients.\n\x1b[0m");

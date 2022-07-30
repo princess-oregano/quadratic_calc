@@ -5,12 +5,12 @@
 int main()
 {
         quadra equation;
-        option mode = OPT_SOLVE;
+        option opt = OPT_SOLVE;
 
         print_menu();
-        while((mode = process_choice()) != OPT_QUIT)
+        while((opt = process_choice()) != OPT_QUIT)
         {
-                switch (mode)
+                switch (opt)
                 {
                         case OPT_SOLVE:
                                 if (!scan_coefs(&equation))
@@ -20,7 +20,7 @@ int main()
                                 }
                                 else
                                 {
-                                        print_error(mode);
+                                        print_error(opt);
                                 }
                                 trim();
                                 break;
@@ -28,11 +28,11 @@ int main()
                                 print_help();
                                 break;
                         case OPT_EASTER_EGG:
-                                easter_egg();
+                                print_easter_egg();
                                 break;
                         case OPT_ERROR_CHAR:
                         case OPT_ERROR_WORD:
-                                print_error(mode);
+                                print_error(opt);
                                 break;
                         case OPT_QUIT:
                         default:

@@ -44,9 +44,9 @@ void print_help();
 //prints a cat and 'bye' message
 void print_bye();
 //prints a cat
-void easter_egg();
+void print_easter_egg();
 //trims '\n' sumbol after using scanf
 void trim();
 //prints a warning when an error occured
-void print_error(option mode);
+void print_error(option opt);
 
