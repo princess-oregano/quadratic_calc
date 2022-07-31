@@ -12,14 +12,20 @@ As the name suggests, this program is a calculator for quadratic equations.
 ```
 $ git clone https://github.com/tyvia/quadratic_calc
 ```
-2. Open the subfolder with source files and compile with GCC.
+2. Open the subfolder with source files and build with Make.
 ```
 $ cd quadratic_calc/
-$ gcc main.cpp functions.cpp -o quadratic -lm 
+$ make all
 ```
-3. Run the program.
+This way the `test` and `quadratic` programs will automatically run(the first one should print `OK` several times).
+
+3. You can run the `quadratic` program again from the folder, where it was built. 
 ```
 $ ./quadratic
+```
+4. To remove all object files type this:
+```
+$ make clean
 ```
 
 ## Usage

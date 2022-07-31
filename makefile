@@ -6,7 +6,7 @@ OBJ_TEST := $(SRC_TEST:.cpp=.o)
 CXX := gcc
 CXXFLAGS := -g -lm 
 
-TARGET := equation
+TARGET := quadratic
 TARGET_TEST := test
 
 all: out run
