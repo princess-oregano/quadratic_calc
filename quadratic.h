@@ -29,28 +29,28 @@ struct quadra
         double solution2              = 0;
 };
 
-//returns 1 if two values are equal
+// Returns 1 if two values are equal.
 bool are_equal(double value1, double value2); 
-//returns 0 if scans coefficients successfully, else 1
+// Returns 0 if scans coefficients successfully, else 1.
 bool scan_coefs      (quadra* equation);         
-//solves equation with given coefficients
+// Solves equation with given coefficients.
 void solve_equation  (quadra* equation);           
-//sorts solutions in increasing order
-void sort_solutions(quadra* equation);
-//prints solutions
-void print_solution  (quadra* equation);           
-//scans and processes input
+// Sorts solutions in increasing order.
+void sort_solutions  (quadra* equation);
+// Prints solutions.
+void print_solution  (const quadra* equation);           
+// Scans and processes input.
 option process_choice();            
-//prints menu
+// Prints menu.
 void print_menu();                                     
-//prints short manual
+// Prints short manual.
 void print_help();                                 
-//prints a cat and 'bye' message
+// Prints a cat and 'bye' message.
 void print_bye();
-//prints a cat
+// Prints a cat.
 void print_easter_egg();
-//trims '\n' sumbol after using scanf
+// Trims '\n' simbol after using scanf.
 void trim();
-//prints a warning when an error occured
+// Prints a warning when an error occured.
 void print_error(option opt);
 

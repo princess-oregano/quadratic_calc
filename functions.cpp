@@ -162,6 +162,8 @@ void solve_equation(quadra* equation)
                         }
                 }
         }
+
+        sort_solutions(equation);
 }
 
 void sort_solutions(quadra* equation)
@@ -176,7 +178,7 @@ void sort_solutions(quadra* equation)
         }
 }
 
-void print_solution(quadra* equation)
+void print_solution(const quadra* equation)
 {
         printf("\nThe equation entered:\n"
                "%.2lf*x^2 %c %.2lf*x %c %.2lf = 0.\n",
@@ -187,22 +189,14 @@ void print_solution(quadra* equation)
         printf("Solutions:\n");
 
         if (equation->sol_num == NO_SOL)
-        {
                 printf("No solutions.\n");
-        }
         else if (equation->sol_num == ONE_SOL)
-        {
                 printf("One solution: %lf.\n", equation->solution1);
-        }
         else if (equation->sol_num == TWO_SOL)
-        {
-                sort_solutions(equation);
                 printf("Two solutions: %lf; %lf.\n", equation->solution1, equation->solution2);
-        }
         else
-        {
                 printf("Infinite number of solutions.\n");
-        }
+        
         printf("\n");
 }
 

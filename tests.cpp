@@ -46,15 +46,17 @@ void test_msg(quadra* equation, answer* ans, bool status)
 {
         if (status)
         {
-                printf("OK\n");
+                printf("\x1b[32mOK\n\x1b[0m");
 
                 return;
         }
 
-        printf("\nFAILURE\n");
+        printf("\n\n\x1b[31mFAILURE\x1b[0m\n");
 
         printf("Expected:\n");
-        printf("x1 = %lf, x2 = %lf, number of solutions: ", ans->solution1, ans->solution2);
+        printf("x1 = %lf, x2 = %lf, number of solutions: ", 
+                ans->solution1, ans->solution2);
+        
         if (ans->sol_num == NO_SOL)
                 printf("0.\n");
         else if (ans->sol_num == ONE_SOL)
@@ -65,7 +67,9 @@ void test_msg(quadra* equation, answer* ans, bool status)
                 printf("Infinite.\n");
 
         printf("Recieved:\n");
-        printf("x1 = %lf, x2 = %lf, number of solutions: ", equation->solution1, equation->solution2);
+        printf("x1 = %lf, x2 = %lf, number of solutions: ", 
+                equation->solution1, equation->solution2);
+        
         if (equation->sol_num == NO_SOL)
                 printf("0.\n");
         else if (equation->sol_num == ONE_SOL)

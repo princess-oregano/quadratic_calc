@@ -1,13 +1,27 @@
+SRC := main.cpp functions.cpp
+SRC_TEST := tests.cpp functions.cpp
+OBJ := $(SRC:.cpp=.o)
+OBJ_TEST := $(SRC_TEST:.cpp=.o)
+
 CXX := gcc
-CXXFLAGS := -g -lm
-TARGET := equation	
+CXXFLAGS := -g -lm 
 
-all:	build run
+TARGET := equation
+TARGET_TEST := test
 
-run:	
+all: out run
+
+run:
+	./$(TARGET_TEST)
 	./$(TARGET)
 
-build: 
-	$(CXX) main.cpp functions.cpp -o $(TARGET) $(CXXFLAGS)
-	$(CXX) tests.cpp functions.cpp -o test $(CXXFLAGS)
+out: $(OBJ) $(OBJ_TEST)
+	$(CC) $(OBJ) -o $(TARGET) $(CXXFLAGS)
+	$(CC) $(OBJ_TEST) -o $(TARGET_TEST) $(CXXFLAGS)
+
+%.o: %.cpp
+	gcc -c $< -o $@ $(CXXFLAGS)
+
+clean: 
+	rm -f $(OBJ) $(OBJ_TEST)
 
