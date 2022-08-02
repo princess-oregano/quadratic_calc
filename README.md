@@ -8,18 +8,18 @@ As the name suggests, this program is a calculator for quadratic equations.
 * [Additional info](#additional-info)
 
 ## Installation and setup
-1. Download all source files into one folder.
+1. Download all source files into one folder:
 ```
 $ git clone https://github.com/tyvia/quadratic_calc
 ```
-2. Open the subfolder with source files and build with Make.
+2. Open the subfolder with source files and build with Make:
 ```
 $ cd quadratic_calc/
 $ make all
 ```
 This way the `test` and `quadratic` programs will automatically run(the first one should print `OK` several times).
 
-3. You can run the `quadratic` program again from the folder, where it was built. 
+3. You can run the `quadratic` program again from the folder, where it was built: 
 ```
 $ ./quadratic
 ```
