@@ -70,6 +70,8 @@ option process_choice()
 
 bool scan_coefs(quadra* equation)
 {
+        assert(equation);
+
         printf("Please enter coefficients: ");
 
         if (scanf("%lf %lf %lf", &equation->a_coef, &equation->b_coef, &equation->c_coef) != 3)
@@ -80,6 +82,8 @@ bool scan_coefs(quadra* equation)
 
 void solve_equation(quadra* equation)
 {
+        assert(equation);
+
         double discriminant_squared = 0;
 
         if (are_equal(equation->a_coef, 0)) {
@@ -140,6 +144,8 @@ void solve_equation(quadra* equation)
 
 void sort_solutions(quadra* equation)
 {
+        assert(equation);
+
         double temp = 0;
 
         if (equation->solution1 > equation->solution2) {
@@ -151,6 +157,8 @@ void sort_solutions(quadra* equation)
 
 void print_solution(const quadra* equation)
 {
+        assert(equation);
+
         printf("\nThe equation entered:\n"
                "%.2lf*x^2 %c %.2lf*x %c %.2lf = 0.\n",
                 equation->a_coef,

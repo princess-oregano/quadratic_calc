@@ -36,6 +36,9 @@ void make_test(double coef_a, double coef_b, double coef_c,
 
 bool check(quadra* equation, answer* ans)
 {
+        assert(equation);
+        assert(ans);
+
         return (are_equal(ans->solution1, equation->solution1) &&
                 are_equal(ans->solution2, equation->solution2) &&
                 ans->sol_num == equation->sol_num);
@@ -43,6 +46,9 @@ bool check(quadra* equation, answer* ans)
 
 void test_msg(quadra* equation, answer* ans, bool status)
 {
+        assert(equation);
+        assert(ans);
+
         if (status) {
                 printf("\x1b[32mOK\n\x1b[0m");
                 return;

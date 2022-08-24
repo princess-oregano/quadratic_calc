@@ -1,3 +1,5 @@
+#include <assert.h>
+
 const double THRESHOLD = 0.000001;
 const int CHOICE_LEN = 40;
 
