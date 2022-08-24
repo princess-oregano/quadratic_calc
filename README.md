@@ -19,13 +19,17 @@ $ make all
 ```
 This way the `test` and `quadratic` programs will automatically run(the first one should print `OK` several times).
 
-3. You can run the `quadratic` program again from the folder, where it was built: 
+3. You can run the `quadratic` program again from the folder, where it was built:
 ```
 $ ./quadratic
 ```
 4. To remove all object files type this:
 ```
 $ make clean
+```
+5. To reinstall program(i.e. delete all files) enter:
+```
+make reinstall
 ```
 
 ## Usage
