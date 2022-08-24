@@ -16,6 +16,7 @@ int main()
                         case OPT_SOLVE:
                                 if (!scan_coefs(&equation)) {
                                         solve_equation(&equation);
+                                        sort_solutions(&equation);
                                         print_solution(&equation);
                                 } else {
                                         print_error(opt);
