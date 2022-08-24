@@ -1,12 +1,12 @@
 SRCDIR := src
 OBJDIR := obj
 
-SRC := main.cpp UI.cpp input.cpp calculations.cpp common.cpp 
+SRC := main.cpp UI.cpp input.cpp calculations.cpp common.cpp
 SRC_TEST := tests.cpp calculations.cpp common.cpp
 OBJ := $(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 OBJ_TEST := $(addprefix $(OBJDIR)/, $(SRC_TEST:.cpp=.o))
 
-CXX := gcc
+CXX := g++
 CXXFLAGS := -O3 -g -std=c++14 -fmax-errors=100 -Wall -Wextra                  \
 	    -Weffc++ -Waggressive-loop-optimizations -Wc++0x-compat           \
 	    -Wc++11-compat -Wc++14-compat -Wcast-align -Wcast-qual            \
@@ -67,20 +67,22 @@ out: $(OBJDIR) $(OBJ) $(OBJ_TEST)
 	$(CXX) $(OBJ_TEST) -o $(TARGET_TEST) $(CXXFLAGS)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
-	printf "%s\n" "Compiling $^..."
+	printf "%s\n" "Compiling $@..."
 	$(CXX) -c $^ -o  $@ $(CXXFLAGS)
 
 $(OBJDIR):
-	printf "%s\n" "Making obj/ directory..."
+	printf "%s\n" "Making $@/ directory..."
 	mkdir $@
 
 clean:
-	printf "%s\n" "Removing obj/ directory..."
+	printf "%s\n" "Removing $(OBJDIR)/ directory..."
 	rm -rf $(OBJDIR)
 	printf "%s\n" "Done."
 
-reinstall: 
-	printf "%s\n" "Reinstalling..."
-	rm -rf ../quadratic_calc
-	printf "%s\n" "Program uninstalled successfully."
+distclean:
+	printf "%s\n" "Removing built files..."
+	rm -rf $(OBJDIR)
+	rm test
+	rm quadratic
+	printf "%s\n" "Done."
 
