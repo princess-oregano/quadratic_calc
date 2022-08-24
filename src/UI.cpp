@@ -14,7 +14,8 @@ void print_menu()
                "  |  ,-.    ,-'         |  /     \n"
                "  |  | (   |            | /      \n"
                "  )  |  \\  `.___________|/      \n"
-               "  `--'   `--'                    \n");
+               "  `--'   `--'                    \n"
+               "      quadratic_calc by tyvia    \n");
         printf("\n"
                "s - solve equation\n"
                "h - help\n"
