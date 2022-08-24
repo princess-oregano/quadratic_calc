@@ -17,7 +17,7 @@ void solve_equation(quadra_t* equation)
 {
         assert(equation);
 
-        double discriminant_squared = 0;
+        double discriminant = 0;
 
         if (are_equal(equation->a_coef, 0)) {
                 if (are_equal(equation->b_coef, 0)) {
@@ -63,13 +63,13 @@ void solve_equation(quadra_t* equation)
         }
 
         // If c != 0.
-        discriminant_squared =   equation->b_coef*equation->b_coef
+        discriminant =   equation->b_coef*equation->b_coef
                              - 4*equation->a_coef*equation->c_coef;
-        if (discriminant_squared < 0) {
+        if (discriminant < 0) {
                 equation->sol_num = NO_SOL;
         } else {
-                equation->solution1 = (-equation->b_coef - sqrt(discriminant_squared)) / (2*equation->a_coef);
-                equation->solution2 = (-equation->b_coef + sqrt(discriminant_squared)) / (2*equation->a_coef);
+                equation->solution1 = (-equation->b_coef - sqrt(discriminant)) / (2*equation->a_coef);
+                equation->solution2 = (-equation->b_coef + sqrt(discriminant)) / (2*equation->a_coef);
 
                 if (are_equal(equation->solution1, equation->solution2)) {
                         equation->sol_num = ONE_SOL;
