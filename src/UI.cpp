@@ -34,7 +34,7 @@ void print_help()
                "Example: for 5*x^2 + 10*x = 0 enter 5 10 0.\n\n");
 }
 
-void print_solution(const quadra* equation)
+void print_solution(const quadra_t* equation)
 {
         assert(equation);
 
@@ -95,7 +95,7 @@ void print_easter_egg()
                 "  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |          \n");
 }
 
-void print_error(option opt)
+void print_error(option_t opt)
 {
         fprintf(stderr, "\x1b[31mWrong input!\n\x1b[0m");
 

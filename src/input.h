@@ -6,8 +6,8 @@
 #include <ctype.h>
 
 //! Scans and processes input.
-option process_choice();
+option_t process_choice();
 //! Returns 0 if scans coefficients successfully, else 1.
-bool scan_coefs(quadra* equation);
+bool scan_coefs(quadra_t* equation);
 
 #endif // INPUT_H

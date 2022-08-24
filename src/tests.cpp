@@ -16,9 +16,9 @@ int main()
 }
 
 void make_test(double coef_a, double coef_b, double coef_c,
-               double sol1, double sol2, num_of_solutions number_sols)
+               double sol1, double sol2, num_of_solutions_t number_sols)
 {
-        quadra equation;
+        quadra_t equation;
         answer ans;
 
         equation.a_coef = coef_a;
@@ -33,7 +33,7 @@ void make_test(double coef_a, double coef_b, double coef_c,
         test_msg(&equation, &ans, check(&equation, &ans));
 }
 
-bool check(quadra* equation, answer* ans)
+bool check(quadra_t* equation, answer* ans)
 {
         assert(equation);
         assert(ans);
@@ -43,7 +43,7 @@ bool check(quadra* equation, answer* ans)
                 ans->sol_num == equation->sol_num);
 }
 
-void test_msg(quadra* equation, answer* ans, bool status)
+void test_msg(quadra_t* equation, answer* ans, bool status)
 {
         assert(equation);
         assert(ans);

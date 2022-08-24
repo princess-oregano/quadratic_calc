@@ -1,7 +1,7 @@
 #include "calculations.h"
 
 //! Sorts solutions in increasing order.
-static void sort_solutions(quadra* equation)
+static void sort_solutions(quadra_t* equation)
 {
         assert(equation);
 
@@ -14,7 +14,7 @@ static void sort_solutions(quadra* equation)
         }
 }
 
-void solve_equation(quadra* equation)
+void solve_equation(quadra_t* equation)
 {
         assert(equation);
 

@@ -1,6 +1,6 @@
 #include "input.h"
 
-option process_choice()
+option_t process_choice()
 {
         char choice[CHOICE_LEN] = {};
         int  symbols_num = 0;
@@ -25,7 +25,7 @@ option process_choice()
                 }
 }
 
-bool scan_coefs(quadra* equation)
+bool scan_coefs(quadra_t* equation)
 {
         assert(equation);
 

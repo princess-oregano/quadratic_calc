@@ -5,6 +5,6 @@
 #include <math.h>
 
 //! Solves equation with given coefficients.
-void solve_equation  (quadra* equation);
+void solve_equation  (quadra_t* equation);
 
 #endif // CALCULAIONS_H

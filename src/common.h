@@ -6,7 +6,7 @@
 const double THRESHOLD = 0.000001;
 const int CHOICE_LEN = 40;
 
-enum option {
+enum option_t {
         OPT_SOLVE      = 0,
         OPT_HELP       = 1,
         OPT_EASTER_EGG = 2,
@@ -15,20 +15,22 @@ enum option {
         OPT_ERROR_WORD = 5,
 };
 
-enum num_of_solutions {
+enum num_of_solutions_t {
          NO_SOL =   0,
         ONE_SOL =   1,
         TWO_SOL =   2,
         INF_SOL = 777,
 };
 
-struct quadra {
-        double a_coef                 = 0;
-        double b_coef                 = 0;
-        double c_coef                 = 0;
-        num_of_solutions sol_num = NO_SOL;
-        double solution1              = 0;
-        double solution2              = 0;
+
+//! Contains information about equation.
+struct quadra_t {
+        double a_coef                 = 0; //!< First coefficient of the equation.    
+        double b_coef                 = 0; //!< Second coefficient of the equation.
+        double c_coef                 = 0; //!< Third coefficient of the equation.
+        num_of_solutions_t sol_num = NO_SOL; //!< Number of solutions.
+        double solution1              = 0; //!< First solution of the equation.
+        double solution2              = 0; //!< Second solution of the equation.
 };
 
 //! Compares two double values.

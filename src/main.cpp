@@ -7,8 +7,8 @@
 
 int main()
 {
-        quadra equation;
-        option opt = OPT_SOLVE;
+        quadra_t equation;
+        option_t opt = OPT_SOLVE;
 
         print_menu();
         while((opt = process_choice()) != OPT_QUIT) {
