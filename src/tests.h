@@ -2,6 +2,7 @@
 #define TESTS_H
 
 #include "common.h"
+#include "calculations.h"
 
 struct answer {
         double solution1              = 0;

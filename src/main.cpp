@@ -5,11 +5,6 @@
 #include "input.h"
 #include "calculations.h"
 
-// Returns 1 if two values are equal.
-bool are_equal(double value1, double value2);
-// Trims '\n' simbol after using scanf.
-void trim();
-
 int main()
 {
         quadra equation;
@@ -47,16 +42,5 @@ int main()
         print_bye();
 
         return 0;
-}
-
-bool are_equal(double value1, double value2)
-{
-        return (fabs(value1 - value2) < THRESHOLD);
-}
-
-void trim()
-{
-        while (getchar() != '\n')
-                ;
 }
 

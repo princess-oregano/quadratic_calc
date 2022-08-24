@@ -30,7 +30,6 @@ void make_test(double coef_a, double coef_b, double coef_c,
         ans.sol_num = number_sols;
 
         solve_equation(&equation);
-        sort_solutions(&equation);
         test_msg(&equation, &ans, check(&equation, &ans));
 }
 

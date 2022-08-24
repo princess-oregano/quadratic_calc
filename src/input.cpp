@@ -36,3 +36,4 @@ bool scan_coefs(quadra* equation)
         else
                 return 0;
 }
+
