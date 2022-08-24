@@ -52,22 +52,35 @@ CXXFLAGS := -O3 -g -std=c++14 -fmax-errors=100 -Wall -Wextra                  \
 TARGET := quadratic
 TARGET_TEST := test
 
+.SILENT:
 all: out run
 
 run:
+	printf "%s\n" "Running tests..."
 	./$(TARGET_TEST)
+	printf "%s\n" "Finished."
 	./$(TARGET)
 
 out: $(OBJDIR) $(OBJ) $(OBJ_TEST)
+	printf "%s\n" "Linking..."
 	$(CXX) $(OBJ) -o $(TARGET) $(CXXFLAGS)
 	$(CXX) $(OBJ_TEST) -o $(TARGET_TEST) $(CXXFLAGS)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
+	printf "%s\n" "Compiling $^..."
 	$(CXX) -c $^ -o  $@ $(CXXFLAGS)
 
 $(OBJDIR):
+	printf "%s\n" "Making obj/ directory..."
 	mkdir $@
 
 clean:
+	printf "%s\n" "Removing obj/ directory..."
 	rm -rf $(OBJDIR)
+	printf "%s\n" "Done."
+
+reinstall: 
+	printf "%s\n" "Reinstalling..."
+	rm -rf ../quadratic_calc
+	printf "%s\n" "Program uninstalled successfully."
 
