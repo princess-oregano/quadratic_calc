@@ -58,29 +58,33 @@ void test_msg(quadra_t* equation, answer* ans, bool status)
         printf("Expected:\n");
         printf("x1 = %lf, x2 = %lf, number of solutions: ",
                 ans->solution1, ans->solution2);
-
-        if (ans->sol_num == NO_SOL)
-                printf("0.\n");
-        else if (ans->sol_num == ONE_SOL)
-                printf("1.\n");
-        else if (ans->sol_num == TWO_SOL)
-                printf("2.\n");
-        else
-                printf("Infinite.\n");
+        print_num_of_sols(ans->sol_num);
 
         printf("Recieved:\n");
         printf("x1 = %lf, x2 = %lf, number of solutions: ",
                 equation->solution1, equation->solution2);
-
-        if (equation->sol_num == NO_SOL)
-                printf("0.\n");
-        else if (equation->sol_num == ONE_SOL)
-                printf("1.\n");
-        else if (equation->sol_num == TWO_SOL)
-                printf("2.\n");
-        else
-                printf("Infinite.\n");
+        print_num_of_sols(ans->sol_num);
 
         printf("\n");
+}
+
+void print_num_of_sols(num_of_solutions_t sol_num)
+{
+        switch (sol_num) { 
+                case NO_SOL:
+                        printf("0.\n");
+                        break;
+                case ONE_SOL:
+                        printf("1.\n");
+                        break;
+                case TWO_SOL:
+                        printf("2.\n");
+                        break;
+                case INF_SOL:
+                        printf("Infinite.\n");
+                        break;
+                default: 
+                        printf("Error.\n");
+        }
 }
 
