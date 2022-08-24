@@ -31,9 +31,10 @@ struct quadra {
         double solution2              = 0;
 };
 
-// Returns 1 if two values are equal.
+//! Compares two double values.
+//! @return 1 if values are equal.
 bool are_equal(double value1, double value2);
-// Trims '\n' simbol after using scanf.
+//! Trims '\n' simbol after using scanf.
 void trim();
 
 #endif // COMMON_H

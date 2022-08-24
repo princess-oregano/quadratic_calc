@@ -1,5 +1,6 @@
 #include "calculations.h"
 
+//! Sorts solutions in increasing order.
 static void sort_solutions(quadra* equation)
 {
         assert(equation);
