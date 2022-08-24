@@ -1,4 +1,7 @@
-#include "quadratic.h"
+#ifndef TESTS_H
+#define TESTS_H
+
+#include "common.h"
 
 struct answer {
         double solution1              = 0;
@@ -14,3 +17,4 @@ void test_msg(quadra* equation, answer* ans, bool status);
 void make_test(double coef_a, double coef_b, double coef_c,
                double sol1, double sol2, num_of_solutions number_sols);
 
+#endif // TESTS_H

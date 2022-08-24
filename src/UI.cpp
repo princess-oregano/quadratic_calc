@@ -1,13 +1,4 @@
-#include <stdio.h>
-#include <math.h>
-#include <ctype.h>
-#include <string.h>
-#include "quadratic.h"
-
-bool are_equal(double value1, double value2)
-{
-        return (fabs(value1 - value2) < THRESHOLD);
-}
+#include "UI.h"
 
 void print_menu()
 {
@@ -40,111 +31,6 @@ void print_help()
         printf("\nCoefficients entry:\n"
                "For equation like a*x^2 + b*x + c = 0, enter a b c.\n"
                "Example: for 5*x^2 + 10*x = 0 enter 5 10 0.\n\n");
-}
-
-option process_choice()
-{
-        char choice[CHOICE_LEN] = {};
-        int  symbols_num = 0;
-
-        printf("Please choose an option: ");
-        scanf("%s%n", choice, &symbols_num);
-
-        if (symbols_num > 1)
-                return OPT_ERROR_WORD;
-
-        switch (tolower(choice[0])) {
-                        case 's':
-                                return OPT_SOLVE;
-                        case 'h':
-                                return OPT_HELP;
-                        case 'q':
-                                return OPT_QUIT;
-                        case 'c':
-                                return OPT_EASTER_EGG;
-                        default:
-                                return OPT_ERROR_CHAR;
-                }
-}
-
-bool scan_coefs(quadra* equation)
-{
-        assert(equation);
-
-        printf("Please enter coefficients: ");
-
-        if (scanf("%lf %lf %lf", &equation->a_coef, &equation->b_coef, &equation->c_coef) != 3)
-                return 1;
-        else
-                return 0;
-}
-
-void solve_equation(quadra* equation)
-{
-        assert(equation);
-
-        double discriminant_squared = 0;
-
-        if (are_equal(equation->a_coef, 0)) {
-                if (are_equal(equation->b_coef, 0)) {
-                        equation->sol_num = (are_equal(equation->c_coef, 0)) ? INF_SOL : NO_SOL;
-                } else {
-                                equation->solution1 = -equation->c_coef / equation->b_coef;
-                                equation->sol_num = ONE_SOL;
-                }
-        } else {
-                if (are_equal(equation->b_coef,0)) {
-                        if (are_equal(equation->c_coef,0)) {
-                                equation->solution1 = 0;
-                                equation->sol_num = ONE_SOL;
-                        } else {
-                                if (-equation->c_coef / equation->a_coef > 0) {
-                                        equation->solution1 =  sqrt(-equation->c_coef / equation->a_coef);
-                                        equation->solution2 = -sqrt(-equation->c_coef / equation->a_coef);
-                                        equation->sol_num = TWO_SOL;
-                                } else {
-                                        equation->sol_num = NO_SOL;
-                                }
-                        }
-                } else {
-                        if (are_equal(equation->c_coef,0)) {
-                                equation->solution1 = 0;
-                                equation->solution2 = -equation->b_coef / equation->a_coef;
-                                equation->sol_num = TWO_SOL;
-                        } else {
-                                discriminant_squared =   equation->b_coef*equation->b_coef
-                                                     - 4*equation->a_coef*equation->c_coef;
-                                if (discriminant_squared < 0) {
-                                      equation->sol_num = NO_SOL;
-                                } else {
-                                        equation->solution1 = (-equation->b_coef - sqrt(discriminant_squared)) / (2*equation->a_coef);
-                                        equation->solution2 = (-equation->b_coef + sqrt(discriminant_squared)) / (2*equation->a_coef);
-
-                                        if (are_equal(equation->solution1, equation->solution2)) {
-                                                equation->sol_num = ONE_SOL;
-                                                equation->solution2 = 0;
-                                        } else {
-                                                equation->sol_num = TWO_SOL;
-                                        }
-                                }
-                        }
-                }
-        }
-
-        sort_solutions(equation);
-}
-
-void sort_solutions(quadra* equation)
-{
-        assert(equation);
-
-        double temp = 0;
-
-        if (equation->solution1 > equation->solution2) {
-                               temp = equation->solution1;
-                equation->solution1 = equation->solution2;
-                equation->solution2 = temp;
-        }
 }
 
 void print_solution(const quadra* equation)
@@ -206,12 +92,6 @@ void print_easter_egg()
                 "  |  |  |  |(_(  |  |  (( |  |  |  |  |  |  |          \n"
                 "  |  |  |  |  |  |  |  |\\)|  |  |  |  |  |  |         \n"
                 "  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |          \n");
-}
-
-void trim()
-{
-        while (getchar() != '\n')
-                ;
 }
 
 void print_error(option opt)
