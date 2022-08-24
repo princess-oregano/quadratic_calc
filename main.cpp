@@ -8,18 +8,13 @@ int main()
         option opt = OPT_SOLVE;
 
         print_menu();
-        while((opt = process_choice()) != OPT_QUIT)
-        {
-                switch (opt)
-                {
+        while((opt = process_choice()) != OPT_QUIT) {
+                switch (opt) {
                         case OPT_SOLVE:
-                                if (!scan_coefs(&equation))
-                                {
+                                if (!scan_coefs(&equation)) {
                                         solve_equation(&equation);
                                         print_solution(&equation);
-                                }
-                                else
-                                {
+                                } else {
                                         print_error(opt);
                                 }
                                 break;
