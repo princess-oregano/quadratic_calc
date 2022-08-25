@@ -34,7 +34,13 @@ static void test_msg(quadra_t* equation, answer* ans, bool status)
                 return;
         }
 
-        print_wcolor(stdout, RED, "FAILURE\n");
+        print_wcolor(stdout, RED, "\nFAILURE\n");
+
+        printf("In equation:\n"
+               "%.6lf*x^2 %c %.6lf*x %c %.6lf = 0.\n",
+                equation->a_coef,
+               (equation->b_coef > 0) ? '+' : '-', fabs(equation->b_coef),
+               (equation->c_coef > 0) ? '+' : '-', fabs(equation->c_coef));
 
         printf("Expected:\n");
         printf("x1 = %.6lf, x2 = %.6lf, number of solutions: ",
@@ -82,7 +88,7 @@ static void make_test(double coef_a, double coef_b, double coef_c,
 
 int main()
 {
-        make_test(0, 0, 0, 0, 0, INF_SOL);
+        make_test(0, 0, 0, 0, 1, INF_SOL);
         make_test(0, 0, 2.5, 0, 0, NO_SOL);
         make_test(0, -3.65, 0, 0, 0, ONE_SOL);
         make_test(0, 5, -10, 0, 2, ONE_SOL);
