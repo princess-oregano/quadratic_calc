@@ -12,6 +12,7 @@ As the name suggests, this program is a calculator for quadratic equations.
 * `git`
 * `make`
 * `g++`
+
 Program was built and tested on Manjaro Linux 21.3.6.
 
 ## Installation and setup
