@@ -22,25 +22,26 @@ void solve_equation(quadra_t* equation)
         if (are_equal(equation->a_coef, 0)) {
                 if (are_equal(equation->b_coef, 0)) {
                         equation->sol_num = (are_equal(equation->c_coef, 0)) ? INF_SOL : NO_SOL;
+
                         return;
-                } 
-               
+                }
+
                 // If b != 0.
                 equation->solution1 = -equation->c_coef / equation->b_coef;
                 equation->sol_num = ONE_SOL;
 
                 return;
         }
-        
+
         // If a != 0.
-        if (are_equal(equation->b_coef,0)) {
-                if (are_equal(equation->c_coef,0)) {
+        if (are_equal(equation->b_coef, 0)) {
+                if (are_equal(equation->c_coef, 0)) {
                         equation->solution1 = 0;
                         equation->sol_num = ONE_SOL;
-                        
+
                         return;
                 }
-                
+
                 // If c != 0.
                 if (-equation->c_coef / equation->a_coef > 0) {
                         equation->solution1 =  sqrt(-equation->c_coef / equation->a_coef);
@@ -53,7 +54,7 @@ void solve_equation(quadra_t* equation)
                 return;
         }
 
-        // If b != 0.
+        // If a, b != 0.
         if (are_equal(equation->c_coef,0)) {
                 equation->solution1 = 0;
                 equation->solution2 = -equation->b_coef / equation->a_coef;
@@ -62,9 +63,9 @@ void solve_equation(quadra_t* equation)
                 return;
         }
 
-        // If c != 0.
-        discriminant =   equation->b_coef*equation->b_coef
-                             - 4*equation->a_coef*equation->c_coef;
+        // If a, b, c != 0.
+        discriminant =     equation->b_coef*equation->b_coef
+                     - 4 * equation->a_coef*equation->c_coef;
         if (discriminant < 0) {
                 equation->sol_num = NO_SOL;
         } else {
@@ -78,7 +79,5 @@ void solve_equation(quadra_t* equation)
                         equation->sol_num = TWO_SOL;
                 }
         }
-
-        sort_solutions(equation);
 }
 

@@ -5,7 +5,7 @@
 //! Prints number of solutions.
 static void print_num_of_sols(num_of_solutions_t sol_num)
 {
-        switch (sol_num) { 
+        switch (sol_num) {
                 case NO_SOL:
                         printf("0.\n");
                         break;
@@ -18,7 +18,7 @@ static void print_num_of_sols(num_of_solutions_t sol_num)
                 case INF_SOL:
                         printf("Infinite.\n");
                         break;
-                default: 
+                default:
                         printf("Error.\n");
         }
 }
@@ -37,12 +37,12 @@ static void test_msg(quadra_t* equation, answer* ans, bool status)
         print_wcolor(stdout, RED, "FAILURE\n");
 
         printf("Expected:\n");
-        printf("x1 = %lf, x2 = %lf, number of solutions: ",
+        printf("x1 = %.6lf, x2 = %.6lf, number of solutions: ",
                 ans->solution1, ans->solution2);
         print_num_of_sols(ans->sol_num);
 
         printf("Recieved:\n");
-        printf("x1 = %lf, x2 = %lf, number of solutions: ",
+        printf("x1 = %.6lf, x2 = %.6lf, number of solutions: ",
                 equation->solution1, equation->solution2);
         print_num_of_sols(ans->sol_num);
 
@@ -78,7 +78,7 @@ static void make_test(double coef_a, double coef_b, double coef_c,
         solve_equation(&equation);
         sort_solutions(&equation);
         test_msg(&equation, &ans, check(&equation, &ans));
-} 
+}
 
 int main()
 {

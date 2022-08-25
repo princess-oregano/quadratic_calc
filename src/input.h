@@ -11,3 +11,4 @@ option_t process_choice();
 bool scan_coefs(quadra_t* equation);
 
 #endif // INPUT_H
+

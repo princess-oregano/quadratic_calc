@@ -1,7 +1,7 @@
 SRCDIR := src
 OBJDIR := obj
 
-SRC := main.cpp UI.cpp input.cpp calculations.cpp common.cpp
+SRC := main.cpp output.cpp input.cpp calculations.cpp common.cpp
 SRC_TEST := tests.cpp calculations.cpp common.cpp
 OBJ := $(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 OBJ_TEST := $(addprefix $(OBJDIR)/, $(SRC_TEST:.cpp=.o))

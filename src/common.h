@@ -9,19 +9,19 @@ const double THRESHOLD = 0.000001;
 const int CHOICE_LEN = 3;
 
 const char DEFAULT_COLOR[] = "\x1b[0m";
-const char RED[]   = "\x1B[31m";
-const char GREEN[] = "\x1b[32m";
-const char MAGENTA[]  = "\x1b[95m";
-const char CYAN[] = "\x1B[36m";
-const char WHITE[] = "\x1b[37m";
+const char RED[]           = "\x1B[31m";
+const char GREEN[]         = "\x1b[32m";
+const char MAGENTA[]       = "\x1b[95m";
+const char CYAN[]          = "\x1B[36m";
+const char WHITE[]         = "\x1b[37m";
 
 enum option_t {
-        OPT_SOLVE      = 0,
-        OPT_HELP       = 1,
-        OPT_EASTER_EGG = 2,
-        OPT_QUIT       = 3,
-        OPT_ERROR_CHAR = 4,
-        OPT_ERROR_WORD = 5,
+        OPT_SOLVE       = 0,
+        OPT_HELP        = 1,
+        OPT_EASTER_EGG  = 2,
+        OPT_QUIT        = 3,
+        OPT_ERROR_CHAR  = 4,
+        OPT_ERROR_WORD  = 5,
 };
 
 enum num_of_solutions_t {
@@ -33,12 +33,12 @@ enum num_of_solutions_t {
 
 //! Contains information about equation.
 struct quadra_t {
-        double a_coef                 = 0; //!< First coefficient of the equation.    
-        double b_coef                 = 0; //!< Second coefficient of the equation.
-        double c_coef                 = 0; //!< Third coefficient of the equation.
+        double a_coef                   = 0; //!< First coefficient of the equation.
+        double b_coef                   = 0; //!< Second coefficient of the equation.
+        double c_coef                   = 0; //!< Third coefficient of the equation.
         num_of_solutions_t sol_num = NO_SOL; //!< Number of solutions.
-        double solution1              = 0; //!< First solution of the equation.
-        double solution2              = 0; //!< Second solution of the equation.
+        double solution1                = 0; //!< First solution of the equation.
+        double solution2                = 0; //!< Second solution of the equation.
 };
 
 //! Compares two double values.

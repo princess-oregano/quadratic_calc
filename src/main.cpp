@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include "common.h"
-#include "UI.h"
+#include "output.h"
 #include "input.h"
 #include "calculations.h"
 
@@ -18,8 +18,6 @@ int main()
                                         solve_equation(&equation);
                                         sort_solutions(&equation);
                                         print_solution(&equation);
-                                } else {
-                                        print_error(opt);
                                 }
                                 break;
                         case OPT_HELP:
@@ -33,8 +31,10 @@ int main()
                                 print_error(opt);
                                 break;
                         case OPT_QUIT:
-                        default:
                                 break;
+                        default:
+                                print_wcolor(stderr, RED, "Invalid option.\n");
+                                assert(0);
                 }
 
                 trim();

@@ -12,17 +12,17 @@ option_t process_choice()
                 return OPT_ERROR_WORD;
 
         switch (tolower(choice[0])) {
-                        case 's':
-                                return OPT_SOLVE;
-                        case 'h':
-                                return OPT_HELP;
-                        case 'q':
-                                return OPT_QUIT;
-                        case 'c':
-                                return OPT_EASTER_EGG;
-                        default:
-                                return OPT_ERROR_CHAR;
-                }
+                case 's':
+                        return OPT_SOLVE;
+                case 'h':
+                        return OPT_HELP;
+                case 'q':
+                        return OPT_QUIT;
+                case 'c':
+                        return OPT_EASTER_EGG;
+                default:
+                        return OPT_ERROR_CHAR;
+        }
 }
 
 bool scan_coefs(quadra_t* equation)
