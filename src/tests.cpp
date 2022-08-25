@@ -2,7 +2,11 @@
 #include <math.h>
 #include "tests.h"
 
-//! Prints number of solutions.
+/**
+ * Prints number of solutions.
+ *
+ * @param [in] sol_num Number of solutions.
+ */
 static void print_num_of_sols(num_of_solutions_t sol_num)
 {
         switch (sol_num) {
@@ -23,7 +27,13 @@ static void print_num_of_sols(num_of_solutions_t sol_num)
         }
 }
 
-//! Prints the result of comparison.
+/**
+ * Prints the result of comparison.
+ *
+ * @param [in] equation Pointer to a structure with general information about quadratic equation.
+ * @param ans [in] Structure with general information about solution of equation.
+ * @param status [in] Bool value, true if recieved and expected solutions are equal.
+ */
 static void test_msg(quadra_t* equation, answer* ans, bool status)
 {
         assert(equation);
@@ -55,7 +65,14 @@ static void test_msg(quadra_t* equation, answer* ans, bool status)
         printf("\n");
 }
 
-//! Returns true if the expected values align with recieved.
+/**
+ * Returns true if the expected values align with recieved.
+ *
+ * @param equation Pointer to a structure with general information about quadratic equation.
+ * @param ans Structure with general information about solution of equation.
+ *
+ * @return Bool value(1 if expected solution equals to recieved, else 0).
+ */
 static bool check(quadra_t* equation, answer* ans)
 {
         assert(equation);
@@ -66,9 +83,18 @@ static bool check(quadra_t* equation, answer* ans)
                 ans->sol_num == equation->sol_num);
 }
 
-//! Compares given solutions with the one that program outputs.
+/**
+ * Compares given solutions with the one that program outputs.
+ *
+ * @param [in] coef_a Coefficient at x^2.
+ * @param [in] coef_b Coefficient at x^1.
+ * @param [in] coef_c Coefficient at x^0.
+ * @param [in] sol1 First solution.
+ * @param [in] sol2 Second solution.
+ * @param [in] number_sols Number of solutions.
+ */
 static void make_test(double coef_a, double coef_b, double coef_c,
-               double sol1, double sol2, num_of_solutions_t number_sols)
+                      double sol1, double sol2, num_of_solutions_t number_sols)
 {
         quadra_t equation;
         answer ans;

@@ -76,16 +76,14 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a09a42c260976318f64b9c90d6b8af8c6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calculations_8cpp.html#a09a42c260976318f64b9c90d6b8af8c6">sort_solutions</a> (<a class="el" href="structquadra.html">quadra</a> *equation)</td></tr>
-<tr class="memdesc:a09a42c260976318f64b9c90d6b8af8c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts solutions in increasing order.  <a href="calculations_8cpp.html#a09a42c260976318f64b9c90d6b8af8c6">More...</a><br /></td></tr>
-<tr class="separator:a09a42c260976318f64b9c90d6b8af8c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab191d796ae16036a75e6cb03ccd9b9d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calculations_8cpp.html#ab191d796ae16036a75e6cb03ccd9b9d2">solve_equation</a> (<a class="el" href="structquadra.html">quadra</a> *equation)</td></tr>
-<tr class="memdesc:ab191d796ae16036a75e6cb03ccd9b9d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves equation with given coefficients.  <a href="calculations_8cpp.html#ab191d796ae16036a75e6cb03ccd9b9d2">More...</a><br /></td></tr>
-<tr class="separator:ab191d796ae16036a75e6cb03ccd9b9d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14c7b570cf30e81a72f9a16e136c1493"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calculations_8cpp.html#a14c7b570cf30e81a72f9a16e136c1493">sort_solutions</a> (<a class="el" href="structquadra__t.html">quadra_t</a> *equation)</td></tr>
+<tr class="separator:a14c7b570cf30e81a72f9a16e136c1493"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a941b1fe8bb9bb9aebf032e3c83e6232a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calculations_8cpp.html#a941b1fe8bb9bb9aebf032e3c83e6232a">solve_equation</a> (<a class="el" href="structquadra__t.html">quadra_t</a> *equation)</td></tr>
+<tr class="separator:a941b1fe8bb9bb9aebf032e3c83e6232a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ab191d796ae16036a75e6cb03ccd9b9d2" name="ab191d796ae16036a75e6cb03ccd9b9d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab191d796ae16036a75e6cb03ccd9b9d2">&#9670;&nbsp;</a></span>solve_equation()</h2>
+<a id="a941b1fe8bb9bb9aebf032e3c83e6232a" name="a941b1fe8bb9bb9aebf032e3c83e6232a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a941b1fe8bb9bb9aebf032e3c83e6232a">&#9670;&nbsp;</a></span>solve_equation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -93,42 +91,44 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void solve_equation </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structquadra.html">quadra</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structquadra__t.html">quadra_t</a> *&#160;</td>
           <td class="paramname"><em>equation</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Solves equation with given coefficients. </p>
+<p >Solves equation with given coefficients.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">equation</td><td>Pointer to a structure with general information about quadratic equation. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a09a42c260976318f64b9c90d6b8af8c6" name="a09a42c260976318f64b9c90d6b8af8c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09a42c260976318f64b9c90d6b8af8c6">&#9670;&nbsp;</a></span>sort_solutions()</h2>
+<a id="a14c7b570cf30e81a72f9a16e136c1493" name="a14c7b570cf30e81a72f9a16e136c1493"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14c7b570cf30e81a72f9a16e136c1493">&#9670;&nbsp;</a></span>sort_solutions()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void sort_solutions </td>
+          <td class="memname">void sort_solutions </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structquadra.html">quadra</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structquadra__t.html">quadra_t</a> *&#160;</td>
           <td class="paramname"><em>equation</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-
-<p>Sorts solutions in increasing order. </p>
+<p >Sorts solutions in increasing order.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">equation</td><td>Pointer to a structure with general information about quadratic equation. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

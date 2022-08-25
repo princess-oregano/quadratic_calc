@@ -76,89 +76,123 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdarg.h&gt;</code><br />
 </div>
 <p><a href="common_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structquadra.html">quadra</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structquadra__t.html">quadra_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure with general information about equation.  <a href="structquadra__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a3cfe71f40b244562d3665516c3934c06"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a3cfe71f40b244562d3665516c3934c06">option</a> { <br />
-&#160;&#160;<a class="el" href="common_8h.html#a3cfe71f40b244562d3665516c3934c06a6f1ed74537b44156a13f0c1f862ff86b">OPT_SOLVE</a> = 0
-, <a class="el" href="common_8h.html#a3cfe71f40b244562d3665516c3934c06a9f410d809faf25bd870728b96974502b">OPT_HELP</a> = 1
-, <a class="el" href="common_8h.html#a3cfe71f40b244562d3665516c3934c06a593dfaa27311a7e9d89fd9db6bdadc2f">OPT_EASTER_EGG</a> = 2
-, <a class="el" href="common_8h.html#a3cfe71f40b244562d3665516c3934c06a506159edf43a22d3d89fb2af02d3fca2">OPT_QUIT</a> = 3
+<tr class="memitem:a98a3d6a4016c9dad9cbd1a99a9c2a45a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a98a3d6a4016c9dad9cbd1a99a9c2a45a">option_t</a> { <br />
+&#160;&#160;<a class="el" href="common_8h.html#a98a3d6a4016c9dad9cbd1a99a9c2a45aa6f1ed74537b44156a13f0c1f862ff86b">OPT_SOLVE</a> = 0
+, <a class="el" href="common_8h.html#a98a3d6a4016c9dad9cbd1a99a9c2a45aa9f410d809faf25bd870728b96974502b">OPT_HELP</a> = 1
+, <a class="el" href="common_8h.html#a98a3d6a4016c9dad9cbd1a99a9c2a45aa593dfaa27311a7e9d89fd9db6bdadc2f">OPT_EASTER_EGG</a> = 2
+, <a class="el" href="common_8h.html#a98a3d6a4016c9dad9cbd1a99a9c2a45aa506159edf43a22d3d89fb2af02d3fca2">OPT_QUIT</a> = 3
 , <br />
-&#160;&#160;<a class="el" href="common_8h.html#a3cfe71f40b244562d3665516c3934c06af747766143d1e387f03b060a8f6f055d">OPT_ERROR_CHAR</a> = 4
-, <a class="el" href="common_8h.html#a3cfe71f40b244562d3665516c3934c06ada8960f624bedd6df05b06df86d72517">OPT_ERROR_WORD</a> = 5
+&#160;&#160;<a class="el" href="common_8h.html#a98a3d6a4016c9dad9cbd1a99a9c2a45aaf747766143d1e387f03b060a8f6f055d">OPT_ERROR_CHAR</a> = 4
+, <a class="el" href="common_8h.html#a98a3d6a4016c9dad9cbd1a99a9c2a45aada8960f624bedd6df05b06df86d72517">OPT_ERROR_WORD</a> = 5
 <br />
  }</td></tr>
-<tr class="separator:a3cfe71f40b244562d3665516c3934c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7c9d85ad543544dff96799a9fef45aa"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#ae7c9d85ad543544dff96799a9fef45aa">num_of_solutions</a> { <a class="el" href="common_8h.html#ae7c9d85ad543544dff96799a9fef45aaa744065c64f7cd30f69ed5c8e7a61babf">NO_SOL</a> = 0
-, <a class="el" href="common_8h.html#ae7c9d85ad543544dff96799a9fef45aaa9975cac25be5c19ebc100ebc58e67004">ONE_SOL</a> = 1
-, <a class="el" href="common_8h.html#ae7c9d85ad543544dff96799a9fef45aaa681db2e870834d62487cf322aacd31ac">TWO_SOL</a> = 2
-, <a class="el" href="common_8h.html#ae7c9d85ad543544dff96799a9fef45aaaf3e6fa9925576441c12b61696459de11">INF_SOL</a> = 777
+<tr class="memdesc:a98a3d6a4016c9dad9cbd1a99a9c2a45a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum with a list of options.  <a href="common_8h.html#a98a3d6a4016c9dad9cbd1a99a9c2a45a">More...</a><br /></td></tr>
+<tr class="separator:a98a3d6a4016c9dad9cbd1a99a9c2a45a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec7735cea1a088a72d53ad38c1f74001"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#aec7735cea1a088a72d53ad38c1f74001">num_of_solutions_t</a> { <a class="el" href="common_8h.html#aec7735cea1a088a72d53ad38c1f74001a744065c64f7cd30f69ed5c8e7a61babf">NO_SOL</a> = 0
+, <a class="el" href="common_8h.html#aec7735cea1a088a72d53ad38c1f74001a9975cac25be5c19ebc100ebc58e67004">ONE_SOL</a> = 1
+, <a class="el" href="common_8h.html#aec7735cea1a088a72d53ad38c1f74001a681db2e870834d62487cf322aacd31ac">TWO_SOL</a> = 2
+, <a class="el" href="common_8h.html#aec7735cea1a088a72d53ad38c1f74001af3e6fa9925576441c12b61696459de11">INF_SOL</a> = 777
  }</td></tr>
-<tr class="separator:ae7c9d85ad543544dff96799a9fef45aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:aec7735cea1a088a72d53ad38c1f74001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum with a list of possible number of roots.  <a href="common_8h.html#aec7735cea1a088a72d53ad38c1f74001">More...</a><br /></td></tr>
+<tr class="separator:aec7735cea1a088a72d53ad38c1f74001"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a03d44666ff1e223af433b240f447f341"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a03d44666ff1e223af433b240f447f341">are_equal</a> (double value1, double value2)</td></tr>
 <tr class="separator:a03d44666ff1e223af433b240f447f341"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a268ae12a22c9f97b84833e4c39fb2278"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a268ae12a22c9f97b84833e4c39fb2278">trim</a> ()</td></tr>
-<tr class="memdesc:a268ae12a22c9f97b84833e4c39fb2278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trims '<br  />
-' simbol after using scanf.  <a href="common_8h.html#a268ae12a22c9f97b84833e4c39fb2278">More...</a><br /></td></tr>
 <tr class="separator:a268ae12a22c9f97b84833e4c39fb2278"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7cab954549ec3b9b1074b76164f4c48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#aa7cab954549ec3b9b1074b76164f4c48">print_wcolor</a> (FILE *stream, const char *color, const char *format,...)</td></tr>
+<tr class="separator:aa7cab954549ec3b9b1074b76164f4c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a3b99de87c4e7ec4d5739a02455c88281"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a3b99de87c4e7ec4d5739a02455c88281">THRESHOLD</a> = 0.000001</td></tr>
+<tr class="memdesc:a3b99de87c4e7ec4d5739a02455c88281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accuracy of calculations.  <a href="common_8h.html#a3b99de87c4e7ec4d5739a02455c88281">More...</a><br /></td></tr>
 <tr class="separator:a3b99de87c4e7ec4d5739a02455c88281"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e46bbd0f838190a27b81bde13cbe6a3"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a7e46bbd0f838190a27b81bde13cbe6a3">CHOICE_LEN</a> = 40</td></tr>
+<tr class="memitem:a7e46bbd0f838190a27b81bde13cbe6a3"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a7e46bbd0f838190a27b81bde13cbe6a3">CHOICE_LEN</a> = 3</td></tr>
+<tr class="memdesc:a7e46bbd0f838190a27b81bde13cbe6a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of string with entered choice.  <a href="common_8h.html#a7e46bbd0f838190a27b81bde13cbe6a3">More...</a><br /></td></tr>
 <tr class="separator:a7e46bbd0f838190a27b81bde13cbe6a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a549f64a5acf3283448301b3e3ee8f7aa"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a549f64a5acf3283448301b3e3ee8f7aa">DEFAULT_COLOR</a> [] = &quot;\x1b[0m&quot;</td></tr>
+<tr class="memdesc:a549f64a5acf3283448301b3e3ee8f7aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color constants for print_wcolor function().  <a href="common_8h.html#a549f64a5acf3283448301b3e3ee8f7aa">More...</a><br /></td></tr>
+<tr class="separator:a549f64a5acf3283448301b3e3ee8f7aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3268463103de0f21878ae7bd59713670"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a3268463103de0f21878ae7bd59713670">RED</a> [] = &quot;\x1B[31m&quot;</td></tr>
+<tr class="separator:a3268463103de0f21878ae7bd59713670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52cf3f87f65c0df93e31f695c0bf3b79"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a52cf3f87f65c0df93e31f695c0bf3b79">GREEN</a> [] = &quot;\x1b[32m&quot;</td></tr>
+<tr class="separator:a52cf3f87f65c0df93e31f695c0bf3b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada67126e6b38c57af60689fafe4fbf92"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#ada67126e6b38c57af60689fafe4fbf92">MAGENTA</a> [] = &quot;\x1b[95m&quot;</td></tr>
+<tr class="separator:ada67126e6b38c57af60689fafe4fbf92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d81c178492d9062f436f54667c8f704"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a3d81c178492d9062f436f54667c8f704">CYAN</a> [] = &quot;\x1B[36m&quot;</td></tr>
+<tr class="separator:a3d81c178492d9062f436f54667c8f704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93d3506255597d645770761c98c24076"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a93d3506255597d645770761c98c24076">WHITE</a> [] = &quot;\x1b[37m&quot;</td></tr>
+<tr class="separator:a93d3506255597d645770761c98c24076"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="ae7c9d85ad543544dff96799a9fef45aa" name="ae7c9d85ad543544dff96799a9fef45aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7c9d85ad543544dff96799a9fef45aa">&#9670;&nbsp;</a></span>num_of_solutions</h2>
+<a id="aec7735cea1a088a72d53ad38c1f74001" name="aec7735cea1a088a72d53ad38c1f74001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec7735cea1a088a72d53ad38c1f74001">&#9670;&nbsp;</a></span>num_of_solutions_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="common_8h.html#ae7c9d85ad543544dff96799a9fef45aa">num_of_solutions</a></td>
+          <td class="memname">enum <a class="el" href="common_8h.html#aec7735cea1a088a72d53ad38c1f74001">num_of_solutions_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enum with a list of possible number of roots. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae7c9d85ad543544dff96799a9fef45aaa744065c64f7cd30f69ed5c8e7a61babf" name="ae7c9d85ad543544dff96799a9fef45aaa744065c64f7cd30f69ed5c8e7a61babf"></a>NO_SOL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ae7c9d85ad543544dff96799a9fef45aaa9975cac25be5c19ebc100ebc58e67004" name="ae7c9d85ad543544dff96799a9fef45aaa9975cac25be5c19ebc100ebc58e67004"></a>ONE_SOL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ae7c9d85ad543544dff96799a9fef45aaa681db2e870834d62487cf322aacd31ac" name="ae7c9d85ad543544dff96799a9fef45aaa681db2e870834d62487cf322aacd31ac"></a>TWO_SOL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ae7c9d85ad543544dff96799a9fef45aaaf3e6fa9925576441c12b61696459de11" name="ae7c9d85ad543544dff96799a9fef45aaaf3e6fa9925576441c12b61696459de11"></a>INF_SOL&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aec7735cea1a088a72d53ad38c1f74001a744065c64f7cd30f69ed5c8e7a61babf" name="aec7735cea1a088a72d53ad38c1f74001a744065c64f7cd30f69ed5c8e7a61babf"></a>NO_SOL&#160;</td><td class="fielddoc"><p >No roots. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aec7735cea1a088a72d53ad38c1f74001a9975cac25be5c19ebc100ebc58e67004" name="aec7735cea1a088a72d53ad38c1f74001a9975cac25be5c19ebc100ebc58e67004"></a>ONE_SOL&#160;</td><td class="fielddoc"><p >One root. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aec7735cea1a088a72d53ad38c1f74001a681db2e870834d62487cf322aacd31ac" name="aec7735cea1a088a72d53ad38c1f74001a681db2e870834d62487cf322aacd31ac"></a>TWO_SOL&#160;</td><td class="fielddoc"><p >Two roots. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aec7735cea1a088a72d53ad38c1f74001af3e6fa9925576441c12b61696459de11" name="aec7735cea1a088a72d53ad38c1f74001af3e6fa9925576441c12b61696459de11"></a>INF_SOL&#160;</td><td class="fielddoc"><p >Infinite number of roots. </p>
+</td></tr>
 </table>
 
 </div>
 </div>
-<a id="a3cfe71f40b244562d3665516c3934c06" name="a3cfe71f40b244562d3665516c3934c06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cfe71f40b244562d3665516c3934c06">&#9670;&nbsp;</a></span>option</h2>
+<a id="a98a3d6a4016c9dad9cbd1a99a9c2a45a" name="a98a3d6a4016c9dad9cbd1a99a9c2a45a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98a3d6a4016c9dad9cbd1a99a9c2a45a">&#9670;&nbsp;</a></span>option_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="common_8h.html#a3cfe71f40b244562d3665516c3934c06">option</a></td>
+          <td class="memname">enum <a class="el" href="common_8h.html#a98a3d6a4016c9dad9cbd1a99a9c2a45a">option_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enum with a list of options. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3cfe71f40b244562d3665516c3934c06a6f1ed74537b44156a13f0c1f862ff86b" name="a3cfe71f40b244562d3665516c3934c06a6f1ed74537b44156a13f0c1f862ff86b"></a>OPT_SOLVE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3cfe71f40b244562d3665516c3934c06a9f410d809faf25bd870728b96974502b" name="a3cfe71f40b244562d3665516c3934c06a9f410d809faf25bd870728b96974502b"></a>OPT_HELP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3cfe71f40b244562d3665516c3934c06a593dfaa27311a7e9d89fd9db6bdadc2f" name="a3cfe71f40b244562d3665516c3934c06a593dfaa27311a7e9d89fd9db6bdadc2f"></a>OPT_EASTER_EGG&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3cfe71f40b244562d3665516c3934c06a506159edf43a22d3d89fb2af02d3fca2" name="a3cfe71f40b244562d3665516c3934c06a506159edf43a22d3d89fb2af02d3fca2"></a>OPT_QUIT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3cfe71f40b244562d3665516c3934c06af747766143d1e387f03b060a8f6f055d" name="a3cfe71f40b244562d3665516c3934c06af747766143d1e387f03b060a8f6f055d"></a>OPT_ERROR_CHAR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3cfe71f40b244562d3665516c3934c06ada8960f624bedd6df05b06df86d72517" name="a3cfe71f40b244562d3665516c3934c06ada8960f624bedd6df05b06df86d72517"></a>OPT_ERROR_WORD&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a98a3d6a4016c9dad9cbd1a99a9c2a45aa6f1ed74537b44156a13f0c1f862ff86b" name="a98a3d6a4016c9dad9cbd1a99a9c2a45aa6f1ed74537b44156a13f0c1f862ff86b"></a>OPT_SOLVE&#160;</td><td class="fielddoc"><p >Solve equation. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a98a3d6a4016c9dad9cbd1a99a9c2a45aa9f410d809faf25bd870728b96974502b" name="a98a3d6a4016c9dad9cbd1a99a9c2a45aa9f410d809faf25bd870728b96974502b"></a>OPT_HELP&#160;</td><td class="fielddoc"><p >Print help message. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a98a3d6a4016c9dad9cbd1a99a9c2a45aa593dfaa27311a7e9d89fd9db6bdadc2f" name="a98a3d6a4016c9dad9cbd1a99a9c2a45aa593dfaa27311a7e9d89fd9db6bdadc2f"></a>OPT_EASTER_EGG&#160;</td><td class="fielddoc"><p >Print easter egg. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a98a3d6a4016c9dad9cbd1a99a9c2a45aa506159edf43a22d3d89fb2af02d3fca2" name="a98a3d6a4016c9dad9cbd1a99a9c2a45aa506159edf43a22d3d89fb2af02d3fca2"></a>OPT_QUIT&#160;</td><td class="fielddoc"><p >Quit the program. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a98a3d6a4016c9dad9cbd1a99a9c2a45aaf747766143d1e387f03b060a8f6f055d" name="a98a3d6a4016c9dad9cbd1a99a9c2a45aaf747766143d1e387f03b060a8f6f055d"></a>OPT_ERROR_CHAR&#160;</td><td class="fielddoc"><p >Wrong letter input. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a98a3d6a4016c9dad9cbd1a99a9c2a45aada8960f624bedd6df05b06df86d72517" name="a98a3d6a4016c9dad9cbd1a99a9c2a45aada8960f624bedd6df05b06df86d72517"></a>OPT_ERROR_WORD&#160;</td><td class="fielddoc"><p >Word input. </p>
+</td></tr>
 </table>
 
 </div>
@@ -189,7 +223,65 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Compares two double values. </p><dl class="section return"><dt>Returns</dt><dd>1 if values are equal. </dd></dl>
+<p >Compares two double values.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value1</td><td>First value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value2</td><td>Second value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if values are equal. </dd></dl>
+
+</div>
+</div>
+<a id="aa7cab954549ec3b9b1074b76164f4c48" name="aa7cab954549ec3b9b1074b76164f4c48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7cab954549ec3b9b1074b76164f4c48">&#9670;&nbsp;</a></span>print_wcolor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_wcolor </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Prints text in specific color.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">stream</td><td>Pointer to output stream. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color</td><td>ANSI color code. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">format</td><td>Pointer to format string. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">...</td><td>arguments specifying data to print. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -207,8 +299,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Trims '<br  />
+<p >Trims '<br  />
 ' simbol after using scanf. </p>
 
 </div>
@@ -221,7 +312,81 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const int CHOICE_LEN = 40</td>
+          <td class="memname">const int CHOICE_LEN = 3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Length of string with entered choice. </p>
+
+</div>
+</div>
+<a id="a3d81c178492d9062f436f54667c8f704" name="a3d81c178492d9062f436f54667c8f704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d81c178492d9062f436f54667c8f704">&#9670;&nbsp;</a></span>CYAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char CYAN[] = &quot;\x1B[36m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a549f64a5acf3283448301b3e3ee8f7aa" name="a549f64a5acf3283448301b3e3ee8f7aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a549f64a5acf3283448301b3e3ee8f7aa">&#9670;&nbsp;</a></span>DEFAULT_COLOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char DEFAULT_COLOR[] = &quot;\x1b[0m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Color constants for print_wcolor function(). </p>
+
+</div>
+</div>
+<a id="a52cf3f87f65c0df93e31f695c0bf3b79" name="a52cf3f87f65c0df93e31f695c0bf3b79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52cf3f87f65c0df93e31f695c0bf3b79">&#9670;&nbsp;</a></span>GREEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char GREEN[] = &quot;\x1b[32m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada67126e6b38c57af60689fafe4fbf92" name="ada67126e6b38c57af60689fafe4fbf92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada67126e6b38c57af60689fafe4fbf92">&#9670;&nbsp;</a></span>MAGENTA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char MAGENTA[] = &quot;\x1b[95m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3268463103de0f21878ae7bd59713670" name="a3268463103de0f21878ae7bd59713670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3268463103de0f21878ae7bd59713670">&#9670;&nbsp;</a></span>RED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char RED[] = &quot;\x1B[31m&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -236,6 +401,22 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">const double THRESHOLD = 0.000001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accuracy of calculations. </p>
+
+</div>
+</div>
+<a id="a93d3506255597d645770761c98c24076" name="a93d3506255597d645770761c98c24076"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93d3506255597d645770761c98c24076">&#9670;&nbsp;</a></span>WHITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char WHITE[] = &quot;\x1b[37m&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">

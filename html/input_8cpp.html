@@ -76,35 +76,33 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af0c770893a277660c885abcb7f5b619b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_8h.html#a3cfe71f40b244562d3665516c3934c06">option</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8cpp.html#af0c770893a277660c885abcb7f5b619b">process_choice</a> ()</td></tr>
-<tr class="memdesc:af0c770893a277660c885abcb7f5b619b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scans and processes input.  <a href="input_8cpp.html#af0c770893a277660c885abcb7f5b619b">More...</a><br /></td></tr>
-<tr class="separator:af0c770893a277660c885abcb7f5b619b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9437303a153d906cc737dcf4420e2839"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8cpp.html#a9437303a153d906cc737dcf4420e2839">scan_coefs</a> (<a class="el" href="structquadra.html">quadra</a> *equation)</td></tr>
-<tr class="memdesc:a9437303a153d906cc737dcf4420e2839"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 0 if scans coefficients successfully, else 1.  <a href="input_8cpp.html#a9437303a153d906cc737dcf4420e2839">More...</a><br /></td></tr>
-<tr class="separator:a9437303a153d906cc737dcf4420e2839"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035cfba3c0bb3d4e84141655cae1cf92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_8h.html#a98a3d6a4016c9dad9cbd1a99a9c2a45a">option_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8cpp.html#a035cfba3c0bb3d4e84141655cae1cf92">process_choice</a> ()</td></tr>
+<tr class="separator:a035cfba3c0bb3d4e84141655cae1cf92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a116ed9d3ffdef3e12562c5d9d9ad7c08"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8cpp.html#a116ed9d3ffdef3e12562c5d9d9ad7c08">scan_coefs</a> (<a class="el" href="structquadra__t.html">quadra_t</a> *equation)</td></tr>
+<tr class="separator:a116ed9d3ffdef3e12562c5d9d9ad7c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af0c770893a277660c885abcb7f5b619b" name="af0c770893a277660c885abcb7f5b619b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0c770893a277660c885abcb7f5b619b">&#9670;&nbsp;</a></span>process_choice()</h2>
+<a id="a035cfba3c0bb3d4e84141655cae1cf92" name="a035cfba3c0bb3d4e84141655cae1cf92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a035cfba3c0bb3d4e84141655cae1cf92">&#9670;&nbsp;</a></span>process_choice()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="common_8h.html#a3cfe71f40b244562d3665516c3934c06">option</a> process_choice </td>
+          <td class="memname"><a class="el" href="common_8h.html#a98a3d6a4016c9dad9cbd1a99a9c2a45a">option_t</a> process_choice </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Scans and processes input. </p>
+<p >Scans and processes input.</p>
+<dl class="section return"><dt>Returns</dt><dd>Choosed option. </dd></dl>
 
 </div>
 </div>
-<a id="a9437303a153d906cc737dcf4420e2839" name="a9437303a153d906cc737dcf4420e2839"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9437303a153d906cc737dcf4420e2839">&#9670;&nbsp;</a></span>scan_coefs()</h2>
+<a id="a116ed9d3ffdef3e12562c5d9d9ad7c08" name="a116ed9d3ffdef3e12562c5d9d9ad7c08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a116ed9d3ffdef3e12562c5d9d9ad7c08">&#9670;&nbsp;</a></span>scan_coefs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -112,14 +110,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool scan_coefs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structquadra.html">quadra</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structquadra__t.html">quadra_t</a> *&#160;</td>
           <td class="paramname"><em>equation</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Returns 0 if scans coefficients successfully, else 1. </p>
+<p >Scans coefficients.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">equation</td><td>Pointer to a structure with general information about quadratic equation.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Bool value(0 if scans coefficients successfully, else 1). </dd></dl>
 
 </div>
 </div>
