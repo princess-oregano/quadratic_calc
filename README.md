@@ -3,9 +3,16 @@
 As the name suggests, this program is a calculator for quadratic equations.
 
 ## Table of contents
+* [Prerequisites](#prerequisites)
 * [Installation and setup](#installation-and-setup)
 * [Usage](@usage)
 * [Additional info](#additional-info)
+
+## Prerequisites
+* `git`
+* `make`
+* `g++`
+Program was built and tested on Manjaro Linux 21.3.6.
 
 ## Installation and setup
 1. Download all source files into one folder:
@@ -17,7 +24,7 @@ $ git clone https://github.com/tyvia/quadratic_calc
 $ cd quadratic_calc/
 $ make all
 ```
-This way the `test` and `quadratic` programs will automatically run(the first one should print `OK` several times).
+This way the `test` and `quadratic` programs will automatically run (the first one should print `OK` several times).
 
 3. You can run the `quadratic` program again from the folder, where it was built:
 ```
@@ -27,9 +34,9 @@ $ ./quadratic
 ```
 $ make clean
 ```
-5. To reinstall program(i.e. delete all files) enter:
+5. To remove all files built by make type this:
 ```
-make reinstall
+make distclean
 ```
 
 ## Usage
