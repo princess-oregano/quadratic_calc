@@ -2,9 +2,18 @@
 #define COMMON_H
 
 #include <assert.h>
+#include <stdio.h>
+#include <stdarg.h>
 
 const double THRESHOLD = 0.000001;
 const int CHOICE_LEN = 40;
+
+const char DEFAULT_COLOR[] = "\x1b[0m";
+const char RED[]   = "\x1B[31m";
+const char GREEN[] = "\x1b[32m";
+const char MAGENTA[]  = "\x1b[95m";
+const char CYAN[] = "\x1B[36m";
+const char WHITE[] = "\x1b[37m";
 
 enum option_t {
         OPT_SOLVE      = 0,
@@ -22,7 +31,6 @@ enum num_of_solutions_t {
         INF_SOL = 777,
 };
 
-
 //! Contains information about equation.
 struct quadra_t {
         double a_coef                 = 0; //!< First coefficient of the equation.    
@@ -38,6 +46,8 @@ struct quadra_t {
 bool are_equal(double value1, double value2);
 //! Trims '\n' simbol after using scanf.
 void trim();
+//! Prints text in specific color.
+void print_wcolor(FILE *stream, const char *color, const char* format, ...);
 
 #endif // COMMON_H
 

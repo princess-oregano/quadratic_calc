@@ -50,11 +50,11 @@ void test_msg(quadra_t* equation, answer* ans, bool status)
         assert(ans);
 
         if (status) {
-                printf("\x1b[32mOK\n\x1b[0m");
+                print_wcolor(stdout, GREEN, "OK\n");
                 return;
         }
 
-        printf("\n\n\x1b[31mFAILURE\x1b[0m\n");
+        print_wcolor(stdout, RED, "FAILURE\n");
 
         printf("Expected:\n");
         printf("x1 = %lf, x2 = %lf, number of solutions: ",

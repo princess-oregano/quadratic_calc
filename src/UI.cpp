@@ -25,11 +25,13 @@ void print_menu()
 
 void print_help()
 {
-        printf("\nCommands:\n"
+        print_wcolor(stdout, MAGENTA,
+               "\nCommands:\n"
                "'s': ask for coefficients to solve equation\n"
                "'h': open manual\n"
-               "'q': quit the program\n");
-        printf("\nCoefficients entry:\n"
+               "'q': quit the program\n\n"
+
+               "Coefficients entry:\n"
                "For equation like a*x^2 + b*x + c = 0, enter a b c.\n"
                "Example: for 5*x^2 + 10*x = 0 enter 5 10 0.\n\n");
 }
@@ -97,14 +99,14 @@ void print_easter_egg()
 
 void print_error(option_t opt)
 {
-        fprintf(stderr, "\x1b[31mWrong input!\n\x1b[0m");
+        print_wcolor(stderr, RED, "Wrong input!\n");
 
         if (opt == OPT_ERROR_CHAR)
-                fprintf(stderr, "\x1b[31mOnly options 's', 'h' and 'q' are allowed.\n\x1b[0m");
+                print_wcolor(stderr, RED, "Only options 's', 'h' and 'q' are allowed.\n");
         else if (opt == OPT_ERROR_WORD)
-                fprintf(stderr, "\x1b[31mOnly letters are allowed.\n\x1b[0m");
+                print_wcolor(stderr, RED, "Only letters are allowed.\n");
         else
-                fprintf(stderr, "\x1b[31mCould not scan coefficients.\n\x1b[0m");
+                print_wcolor(stderr, RED, "Could not scan coefficients.\n");
 
         printf("\x1b[31mPress 'h' for more details.\n\x1b[0m");
 }
