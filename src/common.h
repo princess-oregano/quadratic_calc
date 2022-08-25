@@ -6,7 +6,7 @@
 #include <stdarg.h>
 
 const double THRESHOLD = 0.000001;
-const int CHOICE_LEN = 40;
+const int CHOICE_LEN = 3;
 
 const char DEFAULT_COLOR[] = "\x1b[0m";
 const char RED[]   = "\x1B[31m";

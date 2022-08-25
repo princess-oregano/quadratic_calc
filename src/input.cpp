@@ -6,7 +6,7 @@ option_t process_choice()
         int  symbols_num = 0;
 
         printf("Please choose an option: ");
-        scanf("%s%n", choice, &symbols_num);
+        scanf("%2s%n", choice, &symbols_num);
 
         if (symbols_num > 1)
                 return OPT_ERROR_WORD;
