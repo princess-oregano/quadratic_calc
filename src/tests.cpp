@@ -123,13 +123,13 @@ static void make_test(double coef_a, double coef_b, double coef_c,
 
 int main()
 {
-        make_test(0, 0, 0, 0, 0, INF_SOL);
-        make_test(0, 0, 2.5, 0, 0, NO_SOL);
-        make_test(0, -3.65, 0, 0, 0, ONE_SOL);
-        make_test(0, 5, -10, 0, 2, ONE_SOL);
-        make_test(2, 0, -9, -2.1213203, 2.1213203, TWO_SOL);
-        make_test(5.63, 2.96, 1.3, 0, 0, NO_SOL);
-        make_test(1, 2, 1, -1, 0, ONE_SOL);
+        make_test(   0,     0,   0,          0,         0, INF_SOL);
+        make_test(   0,     0, 2.5,          0,         0,  NO_SOL);
+        make_test(   0, -3.65,   0,          0,         0, ONE_SOL);
+        make_test(   0,     5, -10,          0,         2, ONE_SOL);
+        make_test(   2,     0,  -9, -2.1213203, 2.1213203, TWO_SOL);
+        make_test(5.63,  2.96, 1.3,          0,         0,  NO_SOL);
+        make_test(   1,     2,   1,         -1,         0, ONE_SOL);
 
         return 0;
 }
