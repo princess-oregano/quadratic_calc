@@ -1,6 +1,15 @@
 #include <stdio.h>
 #include <math.h>
-#include "tests.h"
+#include <assert.h>
+#include "common.h"
+#include "calculations.h"
+
+//! Structure with general information about solution of equation.
+struct answer {
+        double solution1                = 0; //!< First solution.
+        double solution2                = 0; //!< Secons solution.
+        num_of_solutions_t sol_num = NO_SOL; //!< Number of solutions.
+};
 
 /**
  * Prints number of solutions.
@@ -47,19 +56,19 @@ static void test_msg(quadra_t* equation, answer* ans, bool status)
         print_wcolor(stdout, RED, "\nFAILURE\n");
 
         printf("In equation:\n"
-               "%.6lf*x^2 %c %.6lf*x %c %.6lf = 0.\n",
+               "%.*lf*x^2 %c %.*lf*x %c %.*lf = 0.\n", PRECISION,
                 equation->a_coef,
-               (equation->b_coef > 0) ? '+' : '-', fabs(equation->b_coef),
-               (equation->c_coef > 0) ? '+' : '-', fabs(equation->c_coef));
+               (equation->b_coef > 0) ? '+' : '-', PRECISION, fabs(equation->b_coef),
+               (equation->c_coef > 0) ? '+' : '-', PRECISION, fabs(equation->c_coef));
 
         printf("Expected:\n");
-        printf("x1 = %.6lf, x2 = %.6lf, number of solutions: ",
-                ans->solution1, ans->solution2);
+        printf("x1 = %.*lf, x2 = %.*lf, number of solutions: ", PRECISION, ans->solution1,
+                                                                PRECISION, ans->solution2);
         print_num_of_sols(ans->sol_num);
 
         printf("Recieved:\n");
-        printf("x1 = %.6lf, x2 = %.6lf, number of solutions: ",
-                equation->solution1, equation->solution2);
+        printf("x1 = %.*lf, x2 = %.*lf, number of solutions: ", PRECISION, equation->solution1,
+                                                                PRECISION, equation->solution2);
         print_num_of_sols(ans->sol_num);
 
         printf("\n");
@@ -114,7 +123,7 @@ static void make_test(double coef_a, double coef_b, double coef_c,
 
 int main()
 {
-        make_test(0, 0, 0, 0, 1, INF_SOL);
+        make_test(0, 0, 0, 0, 0, INF_SOL);
         make_test(0, 0, 2.5, 0, 0, NO_SOL);
         make_test(0, -3.65, 0, 0, 0, ONE_SOL);
         make_test(0, 5, -10, 0, 2, ONE_SOL);

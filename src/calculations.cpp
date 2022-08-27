@@ -1,4 +1,11 @@
+#include <assert.h>
+#include <math.h>
 #include "calculations.h"
+
+bool are_equal(double value1, double value2)
+{
+        return (fabs(value1 - value2) < THRESHOLD);
+}
 
 void sort_solutions(quadra_t* equation)
 {
@@ -22,13 +29,10 @@ void solve_equation(quadra_t* equation)
         if (are_equal(equation->a_coef, 0)) {
                 if (are_equal(equation->b_coef, 0)) {
                         equation->sol_num = (are_equal(equation->c_coef, 0)) ? INF_SOL : NO_SOL;
-
-                        return;
+                } else {
+                        equation->solution1 = -equation->c_coef / equation->b_coef;
+                        equation->sol_num = ONE_SOL;
                 }
-
-                // If b != 0.
-                equation->solution1 = -equation->c_coef / equation->b_coef;
-                equation->sol_num = ONE_SOL;
 
                 return;
         }
@@ -64,13 +68,13 @@ void solve_equation(quadra_t* equation)
         }
 
         // If a, b, c != 0.
-        discriminant =     equation->b_coef*equation->b_coef
-                     - 4 * equation->a_coef*equation->c_coef;
+        discriminant =     equation->b_coef * equation->b_coef
+                     - 4 * equation->a_coef * equation->c_coef;
         if (discriminant < 0) {
                 equation->sol_num = NO_SOL;
         } else {
-                equation->solution1 = (-equation->b_coef - sqrt(discriminant)) / (2*equation->a_coef);
-                equation->solution2 = (-equation->b_coef + sqrt(discriminant)) / (2*equation->a_coef);
+                equation->solution1 = (-equation->b_coef - sqrt(discriminant)) / (2 * equation->a_coef);
+                equation->solution2 = (-equation->b_coef + sqrt(discriminant)) / (2 * equation->a_coef);
 
                 if (are_equal(equation->solution1, equation->solution2)) {
                         equation->sol_num = ONE_SOL;

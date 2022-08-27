@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <assert.h>
 #include "common.h"
 #include "output.h"
 #include "input.h"
@@ -7,17 +8,33 @@
 
 int main()
 {
-        quadra_t equation;
+        quadra_t equation {};
         option_t opt = OPT_SOLVE;
+        bool quit = false;
 
         print_menu();
-        while((opt = process_choice()) != OPT_QUIT) {
+
+        while(!quit) {
+                opt = process_choice();
+                
                 switch (opt) {
                         case OPT_SOLVE:
-                                if (!scan_coefs(&equation)) {
-                                        solve_equation(&equation);
-                                        sort_solutions(&equation);
-                                        print_solution(&equation);
+                                printf("Please enter coefficients: ");
+                                switch (scan_coefs(&equation)) {
+                                        case SCAN_SUCCESS:
+                                                solve_equation(&equation);
+                                                sort_solutions(&equation);
+                                                print_solution(&equation);
+                                                break;
+                                        case SCAN_ERROR:
+                                                print_wcolor(stderr, RED, "Could not scan coefficients.\n");
+                                                break;
+                                        case SCAN_EOF:
+                                                print_wcolor(stderr, RED, "\nEOF encountered.\n");
+                                                quit = true;
+                                                break;
+                                        default:
+                                                print_wcolor(stderr, RED, "Invalid scanning status.\n");
                                 }
                                 break;
                         case OPT_HELP:
@@ -31,13 +48,12 @@ int main()
                                 print_error(opt);
                                 break;
                         case OPT_QUIT:
+                                quit = true;
                                 break;
                         default:
                                 print_wcolor(stderr, RED, "Invalid option.\n");
                                 assert(0);
                 }
-
-                trim();
         }
 
         print_bye();

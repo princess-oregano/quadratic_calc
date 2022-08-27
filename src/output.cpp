@@ -1,31 +1,35 @@
+#include <stdio.h>
+#include <math.h>
+#include <assert.h>
 #include "output.h"
 
 void print_menu()
 {
-        printf("************************************************\n");
-        printf("                         ,       \n"
-               "  ,-.       _,---._ __  / \\     \n"
-               " /  )    .-'       `./ /   \\    \n"
-               "(  (   ,'            `/    /|    \n"
-               " \\  `-\"             \\'\\   / |\n"
-               "  `.              ,  \\ \\ /  |  \n"
-               "   /`.          ,'-`----Y   |    \n"
-               "  (            ;        |   '    \n"
-               "  |  ,-.    ,-'         |  /     \n"
-               "  |  | (   |            | /      \n"
-               "  )  |  \\  `.___________|/      \n"
-               "  `--'   `--'                    \n"
-               "      quadratic_calc by tyvia    \n");
-        printf("\n"
-               "s - solve equation\n"
-               "h - help\n"
-               "q - quit\n");
-        printf("************************************************\n");
+        print_wcolor(stdout, CYAN,
+                "************************************************\n"
+                "                         ,                      \n"
+                "  ,-.       _,---._ __  / \\                    \n"
+                " /  )    .-'       `./ /   \\                   \n"
+                "(  (   ,'            `/    /|                   \n"
+                " \\  `-\"             \\'\\   / |               \n"
+                "  `.              ,  \\ \\ /  |                 \n"
+                "   /`.          ,'-`----Y   |                   \n"
+                "  (            ;        |   '                   \n"
+                "  |  ,-.    ,-'         |  /                    \n"
+                "  |  | (   |            | /                     \n"
+                "  )  |  \\  `.___________|/                     \n"
+                "  `--'   `--'                                   \n"
+                "      quadratic_calc by tyvia                 \n\n"
+
+                "s - solve equation                              \n"
+                "h - help                                        \n"
+                "q - quit                                        \n"
+                "************************************************\n");
 }
 
 void print_help()
 {
-        print_wcolor(stdout, MAGENTA,
+        print_wcolor(stdout, CYAN,
                "\nCommands:\n"
                "'s': ask for coefficients to solve equation\n"
                "'h': open manual\n"
@@ -41,10 +45,10 @@ void print_solution(const quadra_t* equation)
         assert(equation);
 
         printf("\nThe equation entered:\n"
-               "%.6lf*x^2 %c %.6lf*x %c %.6lf = 0.\n",
+               "%.*lf*x^2 %c %.*lf*x %c %.*lf = 0.\n", PRECISION,
                 equation->a_coef,
-               (equation->b_coef > 0) ? '+' : '-', fabs(equation->b_coef),
-               (equation->c_coef > 0) ? '+' : '-', fabs(equation->c_coef));
+               (equation->b_coef > 0) ? '+' : '-', PRECISION, fabs(equation->b_coef),
+               (equation->c_coef > 0) ? '+' : '-', PRECISION, fabs(equation->c_coef));
 
         printf("Solutions:\n");
 
@@ -53,10 +57,11 @@ void print_solution(const quadra_t* equation)
                         printf("No solutions.\n");
                         break;
                 case ONE_SOL:
-                        printf("One solution: %.6lf.\n", equation->solution1);
+                        printf("One solution: %.*lf.\n", PRECISION, equation->solution1);
                         break;
                 case TWO_SOL:
-                        printf("Two solutions: %.6lf; %.6lf.\n", equation->solution1, equation->solution2);
+                        printf("Two solutions: %.*lf; %.*lf.\n", PRECISION, equation->solution1,
+                                                                 PRECISION, equation->solution2);
                         break;
                 case INF_SOL:
                         printf("Infinite number of solutions.\n");
@@ -71,18 +76,18 @@ void print_solution(const quadra_t* equation)
 
 void print_bye()
 {
-        printf(
-        "              __..--''``---....___   _..._    __         \n"
-        "    /// //_.-'    .-/\";  `        ``<._  ``.''_ `. / // /\n"
-        "   ///_.-' _..--.'_    \\                    `( ) ) // //\n"
-        "   / (_..-' // (< _     ;_..__               ; `' / ///  \n"
-        "    / // // //  `-._,_)' // / ``--...____..-' /// / //   \n");
-        printf("                    Bye!\n");
+        print_wcolor(stdout, CYAN,
+                "              __..--''``---....___   _..._    __          \n"
+                "    /// //_.-'    .-/\";  `        ``<._  ``.''_ `. / // /\n"
+                "   ///_.-' _..--.'_    \\                    `( ) ) // // \n"
+                "   / (_..-' // (< _     ;_..__               ; `' / ///   \n"
+                "    / // // //  `-._,_)' // / ``--...____..-' /// / //    \n"
+                "                    Bye!\n");
 }
 
 void print_easter_egg()
 {
-        printf(
+        print_wcolor(stdout, MAGENTA,
                 "             *     ,MMM8&&&.            *              \n"
                 "                  MMMM88&&&&&    .                     \n"
                 "                 MMMM88&&&&&&&                         \n"

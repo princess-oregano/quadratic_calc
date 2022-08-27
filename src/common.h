@@ -1,12 +1,13 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-#include <assert.h>
 #include <stdio.h>
-#include <stdarg.h>
+#include <math.h>
 
+//! Accuracy of output.
+const int PRECISION = 6;
 //! Accuracy of calculations.
-const double THRESHOLD = 0.000001;
+const double THRESHOLD = pow(10, -PRECISION);
 //! Length of string with entered choice.
 const int CHOICE_LEN = 3;
 
@@ -17,6 +18,12 @@ const char GREEN[]         = "\x1b[32m";
 const char MAGENTA[]       = "\x1b[95m";
 const char CYAN[]          = "\x1B[36m";
 const char WHITE[]         = "\x1b[37m";
+
+enum scan_status_t {
+        SCAN_EOF     = -1,
+        SCAN_SUCCESS = 0, 
+        SCAN_ERROR   = 1,
+};
 
 //! Enum with a list of options.
 enum option_t {
@@ -45,21 +52,6 @@ struct quadra_t {
         double solution1                = 0; //!< First solution of the equation.
         double solution2                = 0; //!< Second solution of the equation.
 };
-
-/**
- * Compares two double values.
- *
- * @param [in] value1 First value.
- * @param [in] value2 Second value.
- *
- * @return 1 if values are equal.
- */
-bool are_equal(double value1, double value2);
-
-/**
- * Trims '\n' simbol after using scanf.
- */
-void trim();
 
 /** Prints text in specific color.
  *
