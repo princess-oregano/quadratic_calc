@@ -8,7 +8,7 @@
  *
  * @param equation Pointer to a structure with general information about quadratic equation.
  */
-void print_solution  (const quadra_t* equation);
+void print_solution(const quadra_t* equation);
 
 //! Prints menu.
 void print_menu();

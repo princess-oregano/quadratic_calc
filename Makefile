@@ -6,6 +6,9 @@ SRC_TEST := tests.cpp calculations.cpp common.cpp
 OBJ := $(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 OBJ_TEST := $(addprefix $(OBJDIR)/, $(SRC_TEST:.cpp=.o))
 
+TARGET := quadratic
+TARGET_TEST := test
+
 CXX := g++
 CXXFLAGS := -O3 -g -std=c++14 -fmax-errors=100 -Wall -Wextra                  \
 	    -Weffc++ -Waggressive-loop-optimizations -Wc++0x-compat           \
@@ -49,8 +52,6 @@ CXXFLAGS := -O3 -g -std=c++14 -fmax-errors=100 -Wall -Wextra                  \
 	    -fsanitize=vptr                                                   \
 	    -fPIE                                                             \
 	    -lm -pie
-TARGET := quadratic
-TARGET_TEST := test
 
 .SILENT:
 all: out run

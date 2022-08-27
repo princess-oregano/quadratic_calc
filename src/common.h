@@ -19,10 +19,11 @@ const char MAGENTA[]       = "\x1b[95m";
 const char CYAN[]          = "\x1B[36m";
 const char WHITE[]         = "\x1b[37m";
 
+//! Enum with a list of possible scanning results.
 enum scan_status_t {
-        SCAN_EOF     = -1,
-        SCAN_SUCCESS = 0, 
-        SCAN_ERROR   = 1,
+        SCAN_EOF     = -1, //!< EOF encountered.
+        SCAN_SUCCESS = 0,  //!< Successful scan.
+        SCAN_ERROR   = 1,  //!< Error occured while scanning.
 };
 
 //! Enum with a list of options.

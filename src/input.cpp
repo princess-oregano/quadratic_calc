@@ -105,12 +105,7 @@ int scan_coefs(quadra_t* equation)
                         }
                         return SCAN_ERROR;
                 }
-                ch = getchar();
         }
-        /*
-         *while (isspace(ch = getchar()) && ch != '\n')
-         *        ;
-         */
 
         if (ch != '\n')
                 return SCAN_ERROR;

@@ -30,7 +30,7 @@ int main()
                                                 print_wcolor(stderr, RED, "Could not scan coefficients.\n");
                                                 break;
                                         case SCAN_EOF:
-                                                print_wcolor(stderr, RED, "\nEOF encountered.\n");
+                                                print_wcolor(stderr, RED, "EOF encountered.\n");
                                                 quit = true;
                                                 break;
                                         default:
