@@ -105,8 +105,8 @@ static bool check(quadra_t* equation, answer* ans)
 static void make_test(double coef_a, double coef_b, double coef_c,
                       double sol1, double sol2, num_of_solutions_t number_sols)
 {
-        quadra_t equation;
-        answer ans;
+        quadra_t equation {};
+        answer ans {};
 
         equation.a_coef = coef_a;
         equation.b_coef = coef_b;
