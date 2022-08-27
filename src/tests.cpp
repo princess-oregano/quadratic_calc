@@ -5,7 +5,7 @@
 #include "calculations.h"
 
 //! Structure with general information about solution of equation.
-struct answer {
+struct answer_t {
         double solution1                = 0; //!< First solution.
         double solution2                = 0; //!< Secons solution.
         num_of_solutions_t sol_num = NO_SOL; //!< Number of solutions.
@@ -40,10 +40,10 @@ static void print_num_of_sols(num_of_solutions_t sol_num)
  * Prints the result of comparison.
  *
  * @param [in] equation Pointer to a structure with general information about quadratic equation.
- * @param ans [in] Structure with general information about solution of equation.
- * @param status [in] Bool value, true if recieved and expected solutions are equal.
+ * @param [in] ans Structure with general information about solution of equation.
+ * @param [in] status Bool value, true if recieved and expected solutions are equal.
  */
-static void test_msg(quadra_t* equation, answer* ans, bool status)
+static void test_msg(quadra_t* equation, answer_t* ans, bool status)
 {
         assert(equation);
         assert(ans);
@@ -82,7 +82,7 @@ static void test_msg(quadra_t* equation, answer* ans, bool status)
  *
  * @return Bool value(1 if expected solution equals to recieved, else 0).
  */
-static bool check(quadra_t* equation, answer* ans)
+static bool check(quadra_t* equation, answer_t* ans)
 {
         assert(equation);
         assert(ans);
@@ -106,7 +106,7 @@ static void make_test(double coef_a, double coef_b, double coef_c,
                       double sol1, double sol2, num_of_solutions_t number_sols)
 {
         quadra_t equation {};
-        answer ans {};
+        answer_t ans {};
 
         equation.a_coef = coef_a;
         equation.b_coef = coef_b;
