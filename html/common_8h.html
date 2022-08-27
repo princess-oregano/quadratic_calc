@@ -75,9 +75,8 @@ $(function() {
   <div class="headertitle"><div class="title">common.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;assert.h&gt;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;stdarg.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
 </div>
 <p><a href="common_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -89,6 +88,11 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:ade4dcd4d71dda48f4ab71a274276e9bd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#ade4dcd4d71dda48f4ab71a274276e9bd">scan_status_t</a> { <a class="el" href="common_8h.html#ade4dcd4d71dda48f4ab71a274276e9bdae3b06b817d932038d1f92acc18a9f116">SCAN_EOF</a> = -1
+, <a class="el" href="common_8h.html#ade4dcd4d71dda48f4ab71a274276e9bda94458afb2a0f04c51dd0eb17a35d2f6a">SCAN_SUCCESS</a> = 0
+, <a class="el" href="common_8h.html#ade4dcd4d71dda48f4ab71a274276e9bda4643b4335d2a032ae3f413b13b53540c">SCAN_ERROR</a> = 1
+ }</td></tr>
+<tr class="separator:ade4dcd4d71dda48f4ab71a274276e9bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98a3d6a4016c9dad9cbd1a99a9c2a45a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a98a3d6a4016c9dad9cbd1a99a9c2a45a">option_t</a> { <br />
 &#160;&#160;<a class="el" href="common_8h.html#a98a3d6a4016c9dad9cbd1a99a9c2a45aa6f1ed74537b44156a13f0c1f862ff86b">OPT_SOLVE</a> = 0
 , <a class="el" href="common_8h.html#a98a3d6a4016c9dad9cbd1a99a9c2a45aa9f410d809faf25bd870728b96974502b">OPT_HELP</a> = 1
@@ -111,16 +115,15 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a03d44666ff1e223af433b240f447f341"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a03d44666ff1e223af433b240f447f341">are_equal</a> (double value1, double value2)</td></tr>
-<tr class="separator:a03d44666ff1e223af433b240f447f341"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a268ae12a22c9f97b84833e4c39fb2278"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a268ae12a22c9f97b84833e4c39fb2278">trim</a> ()</td></tr>
-<tr class="separator:a268ae12a22c9f97b84833e4c39fb2278"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7cab954549ec3b9b1074b76164f4c48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#aa7cab954549ec3b9b1074b76164f4c48">print_wcolor</a> (FILE *stream, const char *color, const char *format,...)</td></tr>
 <tr class="separator:aa7cab954549ec3b9b1074b76164f4c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a3b99de87c4e7ec4d5739a02455c88281"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a3b99de87c4e7ec4d5739a02455c88281">THRESHOLD</a> = 0.000001</td></tr>
+<tr class="memitem:ac96357b1d5d7d9565e41d8fab5a07a60"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#ac96357b1d5d7d9565e41d8fab5a07a60">PRECISION</a> = 6</td></tr>
+<tr class="memdesc:ac96357b1d5d7d9565e41d8fab5a07a60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accuracy of output.  <a href="common_8h.html#ac96357b1d5d7d9565e41d8fab5a07a60">More...</a><br /></td></tr>
+<tr class="separator:ac96357b1d5d7d9565e41d8fab5a07a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b99de87c4e7ec4d5739a02455c88281"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a3b99de87c4e7ec4d5739a02455c88281">THRESHOLD</a> = pow(10, -<a class="el" href="common_8h.html#ac96357b1d5d7d9565e41d8fab5a07a60">PRECISION</a>)</td></tr>
 <tr class="memdesc:a3b99de87c4e7ec4d5739a02455c88281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accuracy of calculations.  <a href="common_8h.html#a3b99de87c4e7ec4d5739a02455c88281">More...</a><br /></td></tr>
 <tr class="separator:a3b99de87c4e7ec4d5739a02455c88281"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e46bbd0f838190a27b81bde13cbe6a3"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a7e46bbd0f838190a27b81bde13cbe6a3">CHOICE_LEN</a> = 3</td></tr>
@@ -197,44 +200,26 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a03d44666ff1e223af433b240f447f341" name="a03d44666ff1e223af433b240f447f341"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03d44666ff1e223af433b240f447f341">&#9670;&nbsp;</a></span>are_equal()</h2>
+<a id="ade4dcd4d71dda48f4ab71a274276e9bd" name="ade4dcd4d71dda48f4ab71a274276e9bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade4dcd4d71dda48f4ab71a274276e9bd">&#9670;&nbsp;</a></span>scan_status_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool are_equal </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>value1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>value2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">enum <a class="el" href="common_8h.html#ade4dcd4d71dda48f4ab71a274276e9bd">scan_status_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Compares two double values.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">value1</td><td>First value. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">value2</td><td>Second value.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>1 if values are equal. </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ade4dcd4d71dda48f4ab71a274276e9bdae3b06b817d932038d1f92acc18a9f116" name="ade4dcd4d71dda48f4ab71a274276e9bdae3b06b817d932038d1f92acc18a9f116"></a>SCAN_EOF&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ade4dcd4d71dda48f4ab71a274276e9bda94458afb2a0f04c51dd0eb17a35d2f6a" name="ade4dcd4d71dda48f4ab71a274276e9bda94458afb2a0f04c51dd0eb17a35d2f6a"></a>SCAN_SUCCESS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ade4dcd4d71dda48f4ab71a274276e9bda4643b4335d2a032ae3f413b13b53540c" name="ade4dcd4d71dda48f4ab71a274276e9bda4643b4335d2a032ae3f413b13b53540c"></a>SCAN_ERROR&#160;</td><td class="fielddoc"></td></tr>
+</table>
 
 </div>
 </div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="aa7cab954549ec3b9b1074b76164f4c48" name="aa7cab954549ec3b9b1074b76164f4c48"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa7cab954549ec3b9b1074b76164f4c48">&#9670;&nbsp;</a></span>print_wcolor()</h2>
 
@@ -282,25 +267,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a268ae12a22c9f97b84833e4c39fb2278" name="a268ae12a22c9f97b84833e4c39fb2278"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a268ae12a22c9f97b84833e4c39fb2278">&#9670;&nbsp;</a></span>trim()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void trim </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Trims '<br  />
-' simbol after using scanf. </p>
 
 </div>
 </div>
@@ -379,6 +345,22 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ac96357b1d5d7d9565e41d8fab5a07a60" name="ac96357b1d5d7d9565e41d8fab5a07a60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac96357b1d5d7d9565e41d8fab5a07a60">&#9670;&nbsp;</a></span>PRECISION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int PRECISION = 6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accuracy of output. </p>
+
+</div>
+</div>
 <a id="a3268463103de0f21878ae7bd59713670" name="a3268463103de0f21878ae7bd59713670"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3268463103de0f21878ae7bd59713670">&#9670;&nbsp;</a></span>RED</h2>
 
@@ -400,7 +382,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const double THRESHOLD = 0.000001</td>
+          <td class="memname">const double THRESHOLD = pow(10, -<a class="el" href="common_8h.html#ac96357b1d5d7d9565e41d8fab5a07a60">PRECISION</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">

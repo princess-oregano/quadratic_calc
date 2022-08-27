@@ -72,16 +72,57 @@ $(function() {
   <div class="headertitle"><div class="title">calculations.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="calculations_8h_source.html">calculations.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="calculations_8h_source.html">calculations.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a03d44666ff1e223af433b240f447f341"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calculations_8cpp.html#a03d44666ff1e223af433b240f447f341">are_equal</a> (double value1, double value2)</td></tr>
+<tr class="separator:a03d44666ff1e223af433b240f447f341"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14c7b570cf30e81a72f9a16e136c1493"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calculations_8cpp.html#a14c7b570cf30e81a72f9a16e136c1493">sort_solutions</a> (<a class="el" href="structquadra__t.html">quadra_t</a> *equation)</td></tr>
 <tr class="separator:a14c7b570cf30e81a72f9a16e136c1493"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a941b1fe8bb9bb9aebf032e3c83e6232a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calculations_8cpp.html#a941b1fe8bb9bb9aebf032e3c83e6232a">solve_equation</a> (<a class="el" href="structquadra__t.html">quadra_t</a> *equation)</td></tr>
 <tr class="separator:a941b1fe8bb9bb9aebf032e3c83e6232a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a03d44666ff1e223af433b240f447f341" name="a03d44666ff1e223af433b240f447f341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03d44666ff1e223af433b240f447f341">&#9670;&nbsp;</a></span>are_equal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool are_equal </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Compares two double values.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value1</td><td>First value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value2</td><td>Second value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if values are equal. </dd></dl>
+
+</div>
+</div>
 <a id="a941b1fe8bb9bb9aebf032e3c83e6232a" name="a941b1fe8bb9bb9aebf032e3c83e6232a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a941b1fe8bb9bb9aebf032e3c83e6232a">&#9670;&nbsp;</a></span>solve_equation()</h2>
 

@@ -72,14 +72,21 @@ $(function() {
   <div class="headertitle"><div class="title">input.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="input_8h_source.html">input.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="input_8h_source.html">input.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aa9c0ec95cf4d008686f4e46ecd1a20a3"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8cpp.html#aa9c0ec95cf4d008686f4e46ecd1a20a3">scan_word</a> (char *word, int size)</td></tr>
+<tr class="separator:aa9c0ec95cf4d008686f4e46ecd1a20a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a035cfba3c0bb3d4e84141655cae1cf92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common_8h.html#a98a3d6a4016c9dad9cbd1a99a9c2a45a">option_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8cpp.html#a035cfba3c0bb3d4e84141655cae1cf92">process_choice</a> ()</td></tr>
 <tr class="separator:a035cfba3c0bb3d4e84141655cae1cf92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a116ed9d3ffdef3e12562c5d9d9ad7c08"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8cpp.html#a116ed9d3ffdef3e12562c5d9d9ad7c08">scan_coefs</a> (<a class="el" href="structquadra__t.html">quadra_t</a> *equation)</td></tr>
-<tr class="separator:a116ed9d3ffdef3e12562c5d9d9ad7c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb3af4219630a6075ebb3a37813e1d82"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8cpp.html#aeb3af4219630a6075ebb3a37813e1d82">scan_coefs</a> (<a class="el" href="structquadra__t.html">quadra_t</a> *equation)</td></tr>
+<tr class="separator:aeb3af4219630a6075ebb3a37813e1d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a035cfba3c0bb3d4e84141655cae1cf92" name="a035cfba3c0bb3d4e84141655cae1cf92"></a>
@@ -101,14 +108,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a116ed9d3ffdef3e12562c5d9d9ad7c08" name="a116ed9d3ffdef3e12562c5d9d9ad7c08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a116ed9d3ffdef3e12562c5d9d9ad7c08">&#9670;&nbsp;</a></span>scan_coefs()</h2>
+<a id="aeb3af4219630a6075ebb3a37813e1d82" name="aeb3af4219630a6075ebb3a37813e1d82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb3af4219630a6075ebb3a37813e1d82">&#9670;&nbsp;</a></span>scan_coefs()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool scan_coefs </td>
+          <td class="memname">int scan_coefs </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structquadra__t.html">quadra_t</a> *&#160;</td>
           <td class="paramname"><em>equation</em></td><td>)</td>
@@ -124,6 +131,51 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Bool value(0 if scans coefficients successfully, else 1). </dd></dl>
+
+</div>
+</div>
+<a id="aa9c0ec95cf4d008686f4e46ecd1a20a3" name="aa9c0ec95cf4d008686f4e46ecd1a20a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9c0ec95cf4d008686f4e46ecd1a20a3">&#9670;&nbsp;</a></span>scan_word()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int scan_word </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>word</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Extracts first word from input stream and cleans stream.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">word</td><td>A pointer to an array, which will contain scanned word. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Size of word array.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of scanned characters if scanned successfully, 0 if EOF encountered, -1 if two or more words entered. </dd></dl>
 
 </div>
 </div>

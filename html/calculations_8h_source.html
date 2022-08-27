@@ -74,18 +74,20 @@ $(function() {
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CALCULATIONS_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="common_8h.html">common.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keywordtype">void</span> <a class="code hl_function" href="calculations_8h.html#a941b1fe8bb9bb9aebf032e3c83e6232a">solve_equation</a>  (<a class="code hl_struct" href="structquadra__t.html">quadra_t</a>* equation);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span> <a class="code hl_function" href="calculations_8h.html#a14c7b570cf30e81a72f9a16e136c1493">sort_solutions</a>(<a class="code hl_struct" href="structquadra__t.html">quadra_t</a>* equation);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#endif </span><span class="comment">// CALCULAIONS_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">bool</span> <a class="code hl_function" href="calculations_8h.html#a03d44666ff1e223af433b240f447f341">are_equal</a>(<span class="keywordtype">double</span> value1, <span class="keywordtype">double</span> value2);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span> <a class="code hl_function" href="calculations_8h.html#a941b1fe8bb9bb9aebf032e3c83e6232a">solve_equation</a>(<a class="code hl_struct" href="structquadra__t.html">quadra_t</a>* equation);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="ttc" id="acalculations_8h_html_a14c7b570cf30e81a72f9a16e136c1493"><div class="ttname"><a href="calculations_8h.html#a14c7b570cf30e81a72f9a16e136c1493">sort_solutions</a></div><div class="ttdeci">void sort_solutions(quadra_t *equation)</div><div class="ttdef"><b>Definition:</b> calculations.cpp:3</div></div>
-<div class="ttc" id="acalculations_8h_html_a941b1fe8bb9bb9aebf032e3c83e6232a"><div class="ttname"><a href="calculations_8h.html#a941b1fe8bb9bb9aebf032e3c83e6232a">solve_equation</a></div><div class="ttdeci">void solve_equation(quadra_t *equation)</div><div class="ttdef"><b>Definition:</b> calculations.cpp:16</div></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keywordtype">void</span> <a class="code hl_function" href="calculations_8h.html#a14c7b570cf30e81a72f9a16e136c1493">sort_solutions</a>(<a class="code hl_struct" href="structquadra__t.html">quadra_t</a>* equation);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#endif </span><span class="comment">// CALCULAIONS_H</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="ttc" id="acalculations_8h_html_a03d44666ff1e223af433b240f447f341"><div class="ttname"><a href="calculations_8h.html#a03d44666ff1e223af433b240f447f341">are_equal</a></div><div class="ttdeci">bool are_equal(double value1, double value2)</div><div class="ttdef"><b>Definition:</b> calculations.cpp:5</div></div>
+<div class="ttc" id="acalculations_8h_html_a14c7b570cf30e81a72f9a16e136c1493"><div class="ttname"><a href="calculations_8h.html#a14c7b570cf30e81a72f9a16e136c1493">sort_solutions</a></div><div class="ttdeci">void sort_solutions(quadra_t *equation)</div><div class="ttdef"><b>Definition:</b> calculations.cpp:10</div></div>
+<div class="ttc" id="acalculations_8h_html_a941b1fe8bb9bb9aebf032e3c83e6232a"><div class="ttname"><a href="calculations_8h.html#a941b1fe8bb9bb9aebf032e3c83e6232a">solve_equation</a></div><div class="ttdeci">void solve_equation(quadra_t *equation)</div><div class="ttdef"><b>Definition:</b> calculations.cpp:23</div></div>
 <div class="ttc" id="acommon_8h_html"><div class="ttname"><a href="common_8h.html">common.h</a></div></div>
-<div class="ttc" id="astructquadra__t_html"><div class="ttname"><a href="structquadra__t.html">quadra_t</a></div><div class="ttdoc">Structure with general information about equation.</div><div class="ttdef"><b>Definition:</b> common.h:40</div></div>
+<div class="ttc" id="astructquadra__t_html"><div class="ttname"><a href="structquadra__t.html">quadra_t</a></div><div class="ttdoc">Structure with general information about equation.</div><div class="ttdef"><b>Definition:</b> common.h:47</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

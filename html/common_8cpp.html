@@ -72,56 +72,16 @@ $(function() {
   <div class="headertitle"><div class="title">common.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;stdarg.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a03d44666ff1e223af433b240f447f341"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8cpp.html#a03d44666ff1e223af433b240f447f341">are_equal</a> (double value1, double value2)</td></tr>
-<tr class="separator:a03d44666ff1e223af433b240f447f341"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a268ae12a22c9f97b84833e4c39fb2278"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8cpp.html#a268ae12a22c9f97b84833e4c39fb2278">trim</a> ()</td></tr>
-<tr class="separator:a268ae12a22c9f97b84833e4c39fb2278"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7cab954549ec3b9b1074b76164f4c48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8cpp.html#aa7cab954549ec3b9b1074b76164f4c48">print_wcolor</a> (FILE *stream, const char *color, const char *format,...)</td></tr>
 <tr class="separator:aa7cab954549ec3b9b1074b76164f4c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a03d44666ff1e223af433b240f447f341" name="a03d44666ff1e223af433b240f447f341"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03d44666ff1e223af433b240f447f341">&#9670;&nbsp;</a></span>are_equal()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool are_equal </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>value1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>value2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Compares two double values.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">value1</td><td>First value. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">value2</td><td>Second value.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>1 if values are equal. </dd></dl>
-
-</div>
-</div>
 <a id="aa7cab954549ec3b9b1074b76164f4c48" name="aa7cab954549ec3b9b1074b76164f4c48"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa7cab954549ec3b9b1074b76164f4c48">&#9670;&nbsp;</a></span>print_wcolor()</h2>
 
@@ -169,25 +129,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a268ae12a22c9f97b84833e4c39fb2278" name="a268ae12a22c9f97b84833e4c39fb2278"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a268ae12a22c9f97b84833e4c39fb2278">&#9670;&nbsp;</a></span>trim()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void trim </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Trims '<br  />
-' simbol after using scanf. </p>
 
 </div>
 </div>
