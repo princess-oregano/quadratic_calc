@@ -11,7 +11,7 @@ const double THRESHOLD = pow(10, -PRECISION);
 //! Length of string with entered choice.
 const int CHOICE_LEN = 3;
 
-//! Color constants for print_wcolor function().
+//! Color ANSI escape codes.
 const char DEFAULT_COLOR[] = "\x1b[0m";
 const char RED[]           = "\x1B[31m";
 const char GREEN[]         = "\x1b[32m";
@@ -22,8 +22,8 @@ const char WHITE[]         = "\x1b[37m";
 //! Enum with a list of possible scanning results.
 enum scan_status_t {
         SCAN_EOF     = -1, //!< EOF encountered.
-        SCAN_SUCCESS = 0,  //!< Successful scan.
-        SCAN_ERROR   = 1,  //!< Error occured while scanning.
+        SCAN_SUCCESS =  0,  //!< Successful scan.
+        SCAN_ERROR   =  1,  //!< Error occured while scanning.
 };
 
 //! Enum with a list of options.
