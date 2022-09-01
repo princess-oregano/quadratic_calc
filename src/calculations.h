@@ -27,5 +27,5 @@ void solve_equation(quadra_t* equation);
  */
 void sort_solutions(quadra_t* equation);
 
-#endif // CALCULAIONS_H
+#endif // CALCULATIONS_H
 

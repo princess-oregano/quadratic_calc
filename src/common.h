@@ -17,7 +17,6 @@ const char RED[]           = "\x1B[31m";
 const char GREEN[]         = "\x1b[32m";
 const char MAGENTA[]       = "\x1b[95m";
 const char CYAN[]          = "\x1B[36m";
-const char WHITE[]         = "\x1b[37m";
 
 //! Enum with a list of possible scanning results.
 enum scan_status_t {

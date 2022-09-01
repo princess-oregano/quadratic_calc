@@ -25,5 +25,5 @@ void print_easter_egg();
  */
 void print_error(option_t opt);
 
-#endif // output_H
+#endif // OUTPUT_H
 
