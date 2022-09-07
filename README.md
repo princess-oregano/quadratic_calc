@@ -18,7 +18,7 @@ Program was built and tested on Manjaro Linux 21.3.6.
 ## Installation and setup
 1. Download all source files into one folder:
 ```
-$ git clone https://github.com/tyvia/quadratic_calc
+$ git clone https://github.com/princess-oregano/quadratic_calc
 ```
 2. Open the subfolder with source files and build with Make:
 ```
